@@ -1,0 +1,1 @@
+//how to check array empty or not in nodejs?              

@@ -1,0 +1,6780 @@
+					Reactjs
+
+May31:
+What are the challenges in Modern Web Development?
+- Unified UX
+- Fluid UX
+- Loosely coupled and Extensible
+
+What is solution?
+- Better to build SPA.
+
+How to build SPA?
+- React and Angular
+
+What is difference between Angular and React?
+- React is a library
+- Angular is a developers platform and framework.
+
+What is difference between library and framework?
+- Library can build application.
+- Framework can build and control the application flow.
+
+
+What is React?
+- React is a JavaScript library for building UI.
+- UI = SPA
+- Fluid
+- Unified
+- Loosly Coupled and Extensible.
+
+What are the Features of React?
+1. Component Based
+    - Easy to build interfaces
+    - Easy to reuse
+    - Building faster
+    - Easy to extend
+    - Loosely coupled
+
+2. Modular library
+    - Application specific library
+    - Imporves the performance of application
+    - light weight application
+
+3. Asynchronous Library
+    - Implicitly uses Ajax.
+    - Without reloading complete page
+      new details are added to page.
+
+
+4. Uses Virtual DOM
+   
+FAQ:
+1. What is DOM?
+2. How DOM renders?
+3. What is Shadow DOM?
+4. What is Virtual DOM?
+5. Difference between DOM, Shadow DOM, Virtual DOM?
+June1:
+React Features
+- Component Based
+- Modular
+- Async
+- Virtual DOM
+- Faster
+- Better performance
+
+FAQ:What is DOM?
+Ans: It is a hierarchy of elements presented in Browser.
+
+Browser Engine
+- Chrome        : Blink, V8
+- IE                : Trident
+- Safari            : Webkit
+- FireFox            : Gecko
+- Edge            : Chakra, Chromium
+
+Architecture of Browser Engine
+- UI
+- Browser Engine
+- Rendering Engine
+- Data Persistance
+- JavaScript Interpreter
+
+
+Workflow of Browser Engine
+
+Markup => Bytes => Chars => Token => Node => DOM => Layout => Rendering => Painting
+
+Styles => Bytes => Chars => CSSOM => Layout => Rendering => Paint
+
+DOM         : Document Object Model    of HTML
+CSSOM    : Cascase Style Sheet Object Model of CSS
+
+FAQ: What is Shadow DOM?
+Ans:  Shadow DOM is a DOM under any specific element in page.
+        Root and Shadow hierarchy of building component.
+
+Note:  DOM is for Page,
+         Shadow DOM is for component in page. [date, file, color]
+
+
+
+FAQ: What is Virtual DOM?
+Ans: The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation
+.
+June2:
+Cons of React:
+- React is a library [can build but can't control flow]
+- Need support of various framework explicitly.
+- Need support of various 3rd party libraries
+
+              Forms and Validation        : Formik, Yup
+             API                                : Axios, jQuery Ajax
+             
+- Pace of Development is very fast
+        First Version 2013     -  2022  18.1
+
+- Poor documentation
+
+                              React 18.1 [April 2022]
+
+Setup Environment for React 18:
+1. You can use react in existing web application.
+2. You can create a new react application.
+
+Step-1
+- Download and Install "node js" on your PC
+- We are installing node.js for a package manager called "npm"
+
+        yarn, bower, grunt, rubyGems, npm, nuGet
+
+        https://nodejs.org/en/
+
+  C:\> node -v           12+    [16]
+  C:\> npm  -v             6+    [8]
+
+Step-2
+- Download and Install "Visual Studio Code" editor
+
+    https://code.visualstudio.com/
+
+- Install following extentions for VS Code
+
+    a) Live Server
+     b) vscode-icons
+     c) intelliSense for CSS class names in HTML
+
+
+How to use react in existing web application?
+------------------------------------------------------------
+1. Create  a new folder for your project
+
+                D:\react-web-app
+
+2.  Open folder in your Editor [VS Code]
+
+3.   Open Terminal
+        Ctrl + `      [back tick]
+
+4.  Run the command
+
+        > npm init -y
+
+     This will generate "package.json"
+
+5. Add following folders into project
+
+        - public        [static resources, html, text, pdf, images..]
+        - src            [.css, .scss, .js, .ts ]
+
+
+6. Add following pages into public folder
+
+            - index.html
+            - home.html
+
+
+Note:
+1. In order to use react in any page you need 3 basic libraries
+            a) React                            [ Core Library ]
+            b) ReactDOM                    [ Virtual DOM]
+            c) Babel    Standalone            [ JavaScript Compiler]
+
+
+    React CDN
+            https://reactjs.org/docs/cdn-links.html
+
+    Babel CDN
+            https://babeljs.io/docs/en/babel-standalone
+
+
+
+Index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <h2>Index Page</h2>
+    <a href="home.html">Home</a>
+</body>
+</html>
+
+home.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script&gt;
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script&gt;
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script&gt;
+    <script type="text/babel">
+       /*
+         Upto React 17
+         ReactDOM.render(
+            "Welcome to React !!",
+            document.querySelector("p")
+        )
+        */
+        // React 18
+        const root = ReactDOM.createRoot(document.querySelector("h3"));
+        root.render("Hello ! React");
+    </script>
+</head>
+<body>
+    <h2>Home - Using React</h2>
+    <h3></h3>
+    <a href="index.html">Back to Index</a>
+</body>
+</html>
+June3:
+- You can download react and babel library using NPM
+                  www.npmjs.org
+
+- Open Terminal in your project
+
+        >npm install react            --save
+        >npm install react-dom    --save
+        >npm install @babel/standalone  --save
+
+- All your library files are copied into a folder
+
+            "node_modules"
+
+  Note: Node.js is configure with "umd", hence import library
+          from "umd" not "cjs".
+
+Home.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.js"></script>
+    <script type="text/babel">
+       /*
+         Upto React 17
+         ReactDOM.render(
+            "Welcome to React !!",
+            document.querySelector("p")
+        )
+        */
+        // React 18
+        const root = ReactDOM.createRoot(document.querySelector("h3"));
+        root.render("Hello ! React");
+    </script>
+</head>
+<body>
+    <h2>Home - Using React</h2>
+    <h3></h3>
+    <a href="index.html">Back to Index</a>
+</body>
+</html>
+
+Note: You can configure "ESLINT"  to define
+            a) JavaScript Version  "ES6, ES7,.."
+            b) Module System
+
+
+Creating a new React Application
+----------------------------------------------
+
+Note: You can build a complete empty react application by using
+                    "Web Pack"
+
+
+1. Go to any location on your PC
+2. Open location in command prompt
+
+   D:\>npx  create-react-app   react-shopping
+
+
+3. Open project folder in "Visual Studio Code"
+
+4. To Start and Run project
+
+    D:\react-shopping> npm start
+
+    http://localhost:3000
+
+June6:
+1. How to use react in existing project
+    a) CDN Links
+     b) Downloading Library
+
+2. How to create a new react application
+
+    >npx  create-react-app  appname
+
+    >npm start
+
+    http://localhost:3000
+
+
+                            React Components
+                            --------------------------
+- Component is a template used for building application.
+- Components are building-block for React application.
+- Every component comprises
+        a) Markup
+        b) Styles
+        c) Logic
+- Markup is designed using HTML.
+- Styles are defined using CSS, Bootstrap, Sass, Less, Material
+- JSX [JavaScript Extention] is used for Logic
+            [JavaScript | TypeScript]
+
+- Components allows reusability and easy extensibility.
+- You can build custom components or you can use existing component provided by various 3rd parties.
+
+                    Building a React Component
+                    ----------------------------------------
+- React component is a function or class of JavaScript that returns markup, styles and configures functionality.
+
+- Component function or class are defined in a simple JavaScript file
+                            "Component.js"
+                              [ Modules ]
+   
+        function  Name()
+        {
+        }
+
+        class  Name
+        {
+
+        }
+
+- Component is function or class defined in a module.
+- In order to use function or class from module you have to mark it as
+            "export"
+
+    export function Name() { }        
+     export class Name {  }
+
+- You can also configure "default export"
+
+    export default function Name() { }
+    export default class Name() {  }
+
+- You have to import modules and components
+
+    import  {  Name } from  "Module";        // if it is not default
+    import  Name from Module;                // if it is default
+
+- Every component must return markup.
+
+- Function component returns markup by using "return" keyword.
+
+    export  function Name()
+    {
+        return ("<markup></markup>");
+    }
+
+- Class component returns markup by using "render()"
+
+    export class Name
+    {
+        render() {
+            <markup></markup>
+        }
+    }
+
+Setup Bootstrap for Application:
+1. Open Terminal
+2. Install following libraries
+
+
+
+3. Go to Index.js and lmports relative css files.
+
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+
+Ex: Netflix Register
+
+1. Add a new folder  into SRC
+        "components"
+
+2. Add a new file
+            "NeflixRegisterComponent.js"
+
+export function NetflixRegisterComponent()
+{
+    return(
+        <div className="container-fluid text-center mt-3 bg-dark p-3 text-white w-75">
+            <p>Ready to watch? Enter your email to create or restart your membership.</p>
+            <div className="input-group input-group-lg">
+                <input type="email" className="form-control" />
+                <button className="btn btn-danger">
+                    Get Started
+                    <span className="bi bi-chevron-right"></span>
+                </button>
+            </div>
+        </div>
+    );
+}
+
+3. Go to "Index.js"
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+import App from './App';
+import  {NetflixRegisterComponent}  from './components/NeflixRegiserComonent';
+
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <NetflixRegisterComponent />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+JSX Rules:
+1. You can't use attributes, only properties are allowed
+
+            <div class="">                invalid
+            <div className="">         valid
+
+2. Every element requires end tag or self ending
+
+            <input>                    invalid
+
+            <input> </input>        valid
+
+            <input />                    valid
+            <img />                    valid
+
+3. Component will not allow directly multiple lines of markup.
+    You need a container
+
+            <h2> Hello </h2>
+            <p> Welcome </p>            // invalid
+
+            <div>
+                 <h2> </h2>
+                 <p> </p>
+            </div>
+June7:
+React Components
+a) Presentation
+    HTML
+b) Styles
+    CSS
+c) Logic
+    JSX
+- Function Component
+
+JSX
+- Entier Markup must be in a container
+        <div>            <>            <React.Fragment>
+        </div>            </>        </React.Fragment>
+
+                     Multiple Components in Application
+
+NetflixHeaderComponent.ts
+
+
+export default function NetflixHeaderComponent(){
+    return(
+        <>
+         <div className="d-flex justify-content-between m-3 p-3">
+             <div>
+              <h2 className="text-danger">NETFLIX</h2>
+             </div>
+             <div className="input-group w-25">
+                 <select className="form-select">
+                     <option>Language</option>
+                     <option>English</option>
+                     <option>Hindi</option>
+                 </select>
+                <button className="btn btn-danger ms-2">Signin</button>
+             </div>
+         </div>
+        </>
+    )
+}
+
+NetflixFooterComponent.js
+
+
+
+export default function NetflixFooterComponent()
+{
+    return(
+        <>
+        Questions? Call 000-800-040-1843
+        <div className="row">
+            <div className="col">
+                <ul className="list-unstyled">
+                    <li>FAQHelp</li>
+                    <li>Investor Relations</li>
+                    <li>Account</li>
+                    <li>Media Center</li>
+                </ul>
+            </div>
+            <div className="col">
+            <ul className="list-unstyled">
+                    <li>FAQHelp</li>
+                    <li>Investor Relations</li>
+                    <li>Account</li>
+                    <li>Media Center</li>
+                </ul>
+            </div>
+            <div className="col">
+            <ul className="list-unstyled">
+                    <li>FAQHelp</li>
+                    <li>Investor Relations</li>
+                    <li>Account</li>
+                    <li>Media Center</li>
+                </ul>
+            </div>
+            <div className="col">
+            <ul className="list-unstyled">
+                    <li>FAQHelp</li>
+                    <li>Investor Relations</li>
+                    <li>Account</li>
+                    <li>Media Center</li>
+                </ul>
+            </div>
+        </div>
+        </>
+    )
+}
+
+
+NetflixMainComponent.js
+
+
+export default function NetflixMainComponent()
+{
+    return(
+        <>
+         <div className="text-center">
+             <h1>Unlimited movies, TV shows and more.</h1>
+             <h3>Watch anywhere. Cancel anytime.</h3>
+         </div>
+        </>
+    )
+}
+
+NetflixRegisterComponent.js
+
+export function NetflixRegisterComponent()
+{
+    return(
+        <div>
+            <p className="text-center">Ready to watch? Enter your email to create or restart your membership.</p>
+            <div className="input-group input-group-lg">
+                <input type="email" className="form-control" />
+                <button className="btn btn-danger">
+                    Get Started
+                    <span className="bi bi-chevron-right"></span>
+                </button>
+            </div>
+        </div>
+    );
+}
+
+
+NetflixIndexComponent.js
+
+import './NetflixIndexComponent.css';
+import NetflixHeaderComponent from './NetflixHeaderComponent';
+import NetflixMainComponent from './NetflixMainComponent';
+import { NetflixRegisterComponent } from './NeflixRegiserComonent';
+import NetflixFooterComponent from './NetflixFooterComponent';
+
+export default function NetflixIndexComponent()
+{
+    return(
+        <div className="container-fluid">
+         <div className="box">
+            <header>
+            <NetflixHeaderComponent />
+            </header>
+            <section className="d-flex justify-content-center align-items-center">
+                <main>
+                    <NetflixMainComponent />
+                    <NetflixRegisterComponent />
+                </main>
+            </section>
+            <footer className="m-2 p-2">
+                <NetflixFooterComponent />
+            </footer>
+         </div>
+        </div>
+    )
+}
+
+NetflixIndexComponent.css
+
+.container-fluid {
+    background-image: url("netflixback.png");
+    background-size: contain;
+    height: 100vmax;
+    color:white;
+}
+.box {
+    background-color: rgba(0,0,0,0.6);
+    height: 100vmax;
+    width: 100vmax;
+}
+section {
+    height: 400px;
+}
+
+
+Index.js
+
+<React.StrictMode>
+    <NetflixIndexComponent />
+</React.StrictMode>
+
+
+Ex: Arrow Technique | CallBack
+
+
+const LoginComponent = ()=> (
+    <div>
+        <h2>User Login</h2>
+    </div>
+)
+
+export default LoginComponent;
+
+ 
+June8:
+React Class Component
+
+- Technically class is Program Template.
+- Class have various behaviours
+        a) Blue Print
+        b) Model
+        c) Entity
+
+- Program Template provides a set of values and methods which you can implement and customize according to requirements.
+
+- Class is defined as Entity when it is mapping to business requirements.
+
+- Class is defines as Model when it is mapping to data requirements.
+
+- JavaScript class comprises of
+
+        a) Constructor
+        b) Properties
+        c) Accessors
+        d) Methods
+
+- Constuctor is used for Instantiation.
+- Property store the data.
+- Accessor gives a fine grained control over property.
+  [It can configure restriction of reading and assigning value]
+- Method defines the actions to perform.
+
+
+FAQ: Can we declare a variable in Class?
+Ans:  No
+
+FAQ: Why we can't declare a variable in class?
+Ans:  Variable is Immutable & class can't contain immutable members.
+
+FAQ: How data is stored in class?
+Ans:  By using Property.
+
+FAQ: Can we define a function in class?
+Ans: No. You can have only methods.
+
+Note: You can define a variables and functions in methods.
+
+Ex:
+<script>
+    var username = prompt("Enter Name");
+    var designation = prompt("Enter Designation");
+    var productname = prompt("Enter Product Name");
+    class Product
+    {
+        _productName;
+        get ProductName(){
+            return this._productName;
+        }
+        set ProductName(newName){
+            if(designation=="admin") {
+            
+    this._productName = newName;
+            } else {
+                document.write(`Unauthorized : Hello ${username} You are not authorized to set product name.`);
+            }
+        }
+    }
+    let obj = new Product();
+    obj.ProductName = productname;  //setter
+    if(obj.ProductName){
+        document.write("Product Name : " + obj.ProductName); //getter
+    }
+</script>
+
+
+Ex:
+<script>
+    class Register
+    {
+        Name = "Samsung TV";
+        Rating = {
+            Rate : {
+                Count: 3000,
+                Value: 4.5
+            }
+        }
+        get RateValue(){
+            return this.Rating.Rate.Value;
+        }
+    }
+    let obj = new Register();
+    document.write("Rate Value : " + obj.RateValue);
+</script>
+
+Constructor
+- Every Derived class constructor must have a super call.
+
+Ex:
+<script>
+    class BaseClass
+    {
+        constructor(msg){
+            document.write("Base Class Constructor -" + msg + "<br>");
+        }
+    }
+    class DerivedClass extends BaseClass
+    {
+        constructor(){
+            super("Hello !");
+            document.write("Dervied class Constructor");
+        }
+    }
+    let obj = new DerivedClass();
+
+</script>
+
+- React Class Component extends "React.Component" base.
+
+  class  Home extends React.Component
+  {
+  }
+
+- It is a member of "React" core library.
+
+ React            : Namespace
+ Component        : Class
+
+ namespace  React
+ {
+        class Component  { }
+ }
+
+ React.Component
+
+- A class component must render markup by using "render()"
+
+Ex:
+import React from "react";
+
+export default class RegisterComponent extends React.Component
+{
+        render(){
+            return <h2>Register Class Component</h2>;
+        }
+}
+
+
+What are the drawback of OOP?
+- It will not support low level features.
+- It can't directly interact with Hardware Services.
+- It uses more memory
+- It is slow
+- It is complex in configurations.
+- Heavy on application
+
+What is Difference between React Function and Class Component Earlier?
+ 
+June9:
+FAQ: What are the difference between Function and Class Component?
+
+Class Component
+- It represent a JavaScript class.
+- It is good for extensibility.
+- Component class comprises state
+- It is known as Stateful component.
+- Life Cycle is configured for component.
+- It handles various phases from initialization to destroy.
+
+Function Component
+- It represents a JavaScript function.
+- It is not great in extensibility
+- It uses less memory
+- It is faster
+- It is state less [ from 17+ versions you can use state]
+- Explicitly use  state
+- No life cycle methods implicitly [ explicitly you can configure]
+
+
+FAQ: Which component you will design as class?
+Ans:  The components that need requglar extentions.
+
+
+                                Data Binding
+- Data Binding is technique that defines how data is binded to UI. [View]
+- JavaScript and jQuery uses lot of DOM methods for Data Binding.
+            getElementById()
+            getQuerySelector()
+            appendChild()
+            createElement()
+
+Ex: JavaScript
+
+<head>
+  <script>
+      var categories = ["All", "Electronics", "Footwear"];
+      function bodyload(){
+          for(var item of categories){
+              var li = document.createElement("li");
+              li.innerHTML = item;
+              document.querySelector("ol").appendChild(li);
+          }
+      }
+  </script>
+</head>
+<body onload="bodyload()">
+    <ol>
+
+    </ol>
+</body>
+
+Ex: jQuery
+
+<head>
+  <script src="./node_modules/jquery/dist/jquery.js"></script>
+  <script>
+      var categories = ["All", "Electronics", "Footwear"];
+      $(function(){
+          $.each(categories,function(key, value){
+              $(`<li>${value}</li>`).appendTo("ol");
+          })
+      })
+  </script>
+</head>
+<body>
+    <ol>
+
+    </ol>
+</body>
+
+- React can handle data binding by using binding expression and simple collection methods.
+- React Data Binding Expression
+        "{  }"
+- You can bind to a property or you can bind as literal
+
+        <div> {literal} </div>
+        <img src={product.image}>
+        <input type="text"  value={product.Name} />
+
+Ex:
+
+export default function DataBindingComponent(){
+    var product = {
+        Name: 'Samsung TV',
+        Price: 45005.45,
+        Stock: true
+    }
+    return(
+        <div className="container">
+            <h2>Product Details</h2>
+            <dl>
+                <dt>Name</dt>
+                <dd>{product.Name}</dd>
+                <dd><input type="text" value={product.Name}/></dd>
+                <dt>Price</dt>
+                <dd>{product.Price}</dd>
+                <dt>Stock</dt>
+                <dd>{(product.Stock==true)?"Available":"Out of Stock"}</dd>
+            </dl>
+        </div>
+    )
+}
+
+- You can't bind any dynamic value to attribute.
+
+
+        <div class={ }>            // invalid
+        <div className={}>
+
+        <table height={}>        // invalid - table don't have height
+                                       as property.
+
+
+- Binding a collection - Array
+        .map()
+        .filter()
+        .find()
+        .toString()
+        .join()
+        .slice()
+
+Ex:
+
+export default function DataBindingComponent(){
+    var categories = ["All", "Electronics", "Footwear", "Fashion"];
+    return(
+        <div className="container">
+            <h2>Categories</h2>
+            <ol>
+                {
+                    categories.map(category=>
+                        <li>{category}</li>
+                        )
+                }
+            </ol>
+            <h2>Select Category</h2>
+            <select>
+                {
+                    categories.map(category=>
+                         <option value={category}>{category}</option>
+                        )
+                }
+            </select>
+        </div>
+    )
+}
+
+- In React iterations every iterating item must have a unique key.
+
+Ex:
+
+export default function DataBindingComponent(){
+    var categories = ["All", "Electronics", "Footwear", "Fashion"];
+    return(
+        <div className="container">
+            <h2>Categories</h2>
+            <ol>
+                {
+                    categories.map(category=>
+                        <li key={category}>{category}</li>
+                        )
+                }
+            </ol>
+            <h2>Select Category</h2>
+            <select>
+                {
+                    categories.map(category=>
+                         <option key={category} value={category}>{category}</option>
+                        )
+                }
+            </select>
+        </div>
+    )
+}
+
+June10:
+Data Binding
+- Binding Expressing
+- Property Binding
+
+Ex: Presenting Table
+
+
+export default function DataBindingComponent(){
+    var products = [
+        {Name: 'Samsung TV', Price: 56000.44},
+        {Name: 'Nike Casuals', Price: 4200.44}
+    ];
+    return(
+        <div className="container">
+            <h2>Products Table</h2>
+            <table className="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        products.map(product=>
+                            <tr>
+                                <td>{product.Name}</td>
+                                <td>{product.Price}</td>
+                            </tr>
+                            )
+                    }
+                </tbody>
+            </table>
+        </div>
+    )
+}
+
+Ex: Nested Iterations
+                       
+
+export default function DataBindingComponent(){
+    var menu = [
+        {Category: "Electronics", Products: ["Samsung TV", "Mobile"]},
+        {Category: "Footwear", Products: ["Nike Causals", "Lee Boot"]}
+    ]
+    return(
+        <div className="container">
+            <h2>Categories</h2>
+            <ol>
+                {
+                    menu.map(item =>
+                        <li key={item.Category}>{item.Category}
+                            <ul>
+                                {
+                                    item.Products.map(product=>
+                                        <li key={product}>{product}</li>
+                                        )
+                                }
+                            </ul>
+                        </li>
+                        )
+                }
+            </ol>
+            <h2>Select a Product</h2>
+            <select>
+                {
+                    menu.map(item=>
+                        <optgroup key={item.Category} label={item.Category}>
+                            {
+                                item.Products.map(product=>
+                                    <option key={product}>{product}</option>
+                                    )
+                            }
+                        </optgroup>
+                        )
+                }
+            </select>
+        </div>
+    )
+}
+
+- React supports only "One Way Binding".
+- Two way binding is not supported implicitly, you have to implement explicitly by using "Event Binding".
+- Two way binding is the process of identifying changes in UI and update back to data.
+- You have to explicitly manage by using Event Handlers like
+            onChange
+            onBlur
+            onKeyup etc..
+- Never use variables to handle data in a component.
+- Variables are immutable.
+- Component must have data in only mutable properties.
+- You have to use "State" for storing data.
+- Class component in react have default state.
+- Function component requires explicit state.
+- You can configure state for function component by using
+                "useState" hook
+- It is an Array Type that comprises of 2 elements
+        a) getter
+        b) setter
+
+- You have to use a destructing technique to access the
+   the "accessors" from useState
+
+Syntax:
+    const   [getter, setter] = useState(value);
+
+     { getter }
+
+Ex:
+import { useState } from "react";
+
+export default function DataBindingComponent(){
+     const [products, setProduct] = useState(["TV", "Mobile", "Shoe"]);
+    return(
+        <div className="container">
+            <ol>
+                {
+                    products.map(product=>
+                        <li key={product}>{product}</li>
+                        )
+                }
+            </ol>
+        </div>
+    )
+}
+
+- In class component the actions to perform on component initlization are performed by using Life Cycle Hook Method
+                a) componentDidMount()
+                b) componentMount()
+
+- In function component it is managed by using a Hook
+                "useEffects()"
+   [It acts as a constructor]
+
+Syntax:
+                useEffects(()=> {
+
+
+                }, [dependencies])
+
+
+Ex: Nasa API
+
+import { useState, useEffect } from "react";
+
+export default function DataBindingComponent(){
+     const [mars, setMars] = useState();
+
+     useEffect(()=>{
+        fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY&quot;)
+        .then(response=> response.json())
+        .then(data=>{
+            setMars(data);
+        })
+     },[])
+
+    return(
+        <div className="container">
+            <h2>Mars Photos</h2>
+            <table className="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Photo Id</th>
+                        <th>Camera Name</th>
+                        <th>Rover Name</th>
+                        <th>Preview</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        mars.photos.map(photo=>
+                            <tr>
+                                <td>{photo.id}</td>
+                                <td>{photo.camera.full_name}</td>
+                                <td>{photo.rover.name}</td>
+                                <td>
+                                    <img src={photo.img_src} width="100" height="100"/>
+                                </td>
+                            </tr>
+                            )
+                    }
+                </tbody>
+            </table>
+        </div>
+    )
+}
+
+Ex: API with Card Style
+
+import { useState, useEffect } from "react";
+
+export default function DataBindingComponent(){
+     const [mars, setMars] = useState();
+
+     useEffect(()=>{
+        fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY&quot;)
+        .then(response=> response.json())
+        .then(data=>{
+            setMars(data);
+        })
+     },[])
+
+    return(
+        <div className="container">
+            <h2>Mars Photos</h2>
+            <div className="d-flex flex-wrap">
+                {
+                    mars.photos.map(photo=>
+                        <div className="card p-2 m-2 w-25">
+                            <img src={photo.img_src} className="card-img-top" height="150" />
+                            <div className="card-header">
+                                <h2>{photo.camera.full_name}</h2>
+                            </div>
+                            <div className="card-body">
+                                <p>{photo.rover.name}</p>
+                            </div>
+                        </div>
+                       
+                        )
+                }
+            </div>
+        </div>
+    )
+}
+
+June13:
+Data Binding
+- State in Function Component
+- One Way Binding
+- Fetch data from API
+- Fakestore API
+
+http://fakestoreapi.com/products                : returns all products
+http://fakestoreapi.com/products/categories : returns all categories
+
+Ex:
+ShoppingComponent.js
+
+import { useState, useEffect } from "react";
+
+export default function ShoppingComponent()
+{
+    const [categories, setCategories] = useState([]);
+    const [products, setProducts] = useState([]);
+
+    function LoadCategories(){
+        fetch('http://fakestoreapi.com/products/categories&#39;)
+        .then(response=> response.json())
+        .then(data=> {
+            data.unshift('All');
+            setCategories(data);
+        })
+    }
+
+    function LoadProducts(){
+        fetch('http://fakestoreapi.com/products&#39;)
+        .then(response=> response.json())
+        .then(data=>{
+            setProducts(data);
+        })
+    }
+
+    useEffect(()=>{
+        LoadCategories();
+        LoadProducts();
+    },[])
+
+
+    return(
+        <div className="container-fluid">
+          <header className="bg-danger text-white text-center p-2">
+             <h1> <span className="bi bi-cart"></span> Shopping Home</h1>
+          </header>
+          <section className="row">
+            <nav className="col-3">
+               <div>
+                <label>Select a Category</label>
+                <div>
+                    <select className="form-select">
+                        {
+                            categories.map(category=>
+                                <option key={category}>{category.toUpperCase()}</option>
+                                )
+                        }
+                    </select>
+                </div>
+               </div>
+            </nav>
+            <main className="col-9 d-flex flex-wrap overflow-auto" style={{height:'600px'}} >
+                {
+                    products.map(product=>
+                        <div key={product.id} className="card m-2 p-2 w-25">
+                            <img src={product.image} className="card-img-top" height="150" />
+                            <div className="card-header">
+                                <p>{product.title}</p>
+                            </div>
+                            <div className="card-body">
+                                <dl>
+                                    <dt>Price</dt>
+                                    <dd>{product.price}</dd>
+                                    <dt>Rating</dt>
+                                    <dd>
+                                        <span className="bi bi-star-fill text-success"></span>
+                                        {product.rating.rate} <span>[{product.rating.count}]</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        )
+                }
+            </main>
+          </section>
+        </div>
+    )
+}
+
+Two Way Binding
+------------------------
+- React will not support two-way-binding.
+- You have to explicitly implement by using "EventBinding"
+- It is the process of identifying the changes in UI and updating the changes into data source.
+
+
+What is Event?
+- Event is a message sent by sender to its subscriber in order to notify the change.
+- Event follows a software design pattern called "Observer".
+- It is a communication pattern]
+- Event uses "Delegate" mechanism [ function pointer ].
+- JavaScript events are managed by "browser" window object.
+- JavaScript Browser Objects
+        - window
+        - location
+        - navigator
+        - history
+        - document
+- React can't directly use the browser events [Actual DOM]
+- React uses "SyntheticEvents" object for Virtual DOM.
+- Synthetic Events will map to browser events.
+- React Synthetic Events will support only one "event" argument.
+  [ 'this' is not allowed ]
+
+            event.EventProperties
+            event.target.objectProperty
+
+Syntax:
+            function Insert(e)
+            {
+                e.clientX, e.keyCode;
+                e.target.id, e.target.name, e.target.value;
+            }
+
+            <button  onClick={Insert}>
+
+- React uses all JavaScript Events
+
+1. Mouse Events
+        onMouseOver,
+        onMouseOut
+        onMouseMove
+        onMouseDown
+        onMouseUp
+2. Keyboard Events
+        onKeyUp    
+        onKeyDown
+        onKeyPress
+3. Element State Events
+        onChange
+        onSelect
+        onFocus
+        onBlur
+        onChecked
+4. Button Events
+        onClick
+        onDblClick
+        onContextMenu
+5. Timer Events
+        setInterval()
+        clearInterval()
+        setTimeout()
+        clearTimeout()
+6. Clipboard Events
+        onCut()
+        onCopy()
+        onPaste()
+7. Touch Events
+        onTouchStart()
+        onTouchEnd()
+        onTouchMove()
+8. Form Events
+        onSubmit()
+        onReset()
+
+Note: If you are binding any value to HTML form element using "value" property, then it is configured as "read-only".
+        It allow read/write you have to bind "onChange" event for HTML form element.
+        If value binding is not defined, then you can configure without "onChange".
+
+Syntax:
+        const [ userName ] = useState('John');
+
+        <input type="text" value={userName}>  // invalid
+        <input type="text" value={userName} onChange="">  // valid
+
+Ex:
+EventBindingComponent.js
+
+import { useState, useEffect } from "react";
+
+export default function EventBindingComponent()
+{
+
+    const [userName, setUserName] = useState('John');
+
+    function handleUserName(e){
+        setUserName(e.target.value);
+    }
+
+    return(
+        <div className="container-fluid">
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" value={} onBlur={handleUserName}  /></dd>
+            </dl>
+            <h3>Hello ! {userName}</h3>
+        </div>
+    )
+}
+
+june14:
+One Way Binding
+Two Way Binding
+Event Binding
+
+Ex:
+TwoWayBinding.js
+
+
+import { useState } from "react";
+
+export default function TwoWayBinding(){
+    const [product, setProduct] = useState({Name:'', Price:0, City:'', Stock:false});
+    const [newProduct, setNewProduct] = useState({Name:'', Price:0, City:'', Stock:false});
+
+    function handleName(e){
+        setProduct({
+            Name: e.target.value,
+            Price: product.Price,
+            City: product.City,
+            Stock: product.Stock
+        })
+    }
+    function handlePrice(e){
+        setProduct({
+            Name: product.Name,
+            Price: e.target.value,
+            City: product.City,
+            Stock: product.Stock
+        })
+    }
+    function handleCity(e){
+        setProduct({
+            Name: product.Name,
+            Price: product.Price,
+            City: e.target.value,
+            Stock: product.Stock
+        })
+    }
+    function handleStock(e){
+        setProduct({
+            Name: product.Name,
+            Price: product.Price,
+            City: product.City,
+            Stock: e.target.checked
+        })
+    }
+
+    function handleRegisterClick(){
+        setNewProduct(product);
+    }
+
+    return(
+        <div className="container-fluid">
+            <div className="row">
+                <div className="col-3">
+                    <h2>Register Product</h2>
+                    <dl>
+                        <dt>Name</dt>
+                        <dd><input className="form-control" onChange={handleName} type="text"/></dd>
+                        <dt>Price</dt>
+                        <dd><input className="form-control" onChange={handlePrice} type="text"/></dd>
+                        <dt>City</dt>
+                        <dd>
+                            <select onChange={handleCity} className="form-select">
+                                <option>Delhi</option>
+                                <option>Hyd</option>
+                            </select>
+                        </dd>
+                        <dt>Stock</dt>
+                        <dd className="form-switch">
+                            <input onChange={handleStock} className="form-check-input" type="checkbox" /> Available
+                        </dd>
+                    </dl>
+                    <button onClick={handleRegisterClick} className="btn btn-primary w-100">Register</button>
+                </div>
+                <div className="col-9">
+                    <h2>Product Details</h2>
+                    <dl>
+                        <dt>Name</dt>
+                        <dd>{newProduct.Name}</dd>
+                        <dt>Price</dt>
+                        <dd>{newProduct.Price}</dd>
+                        <dt>City</dt>
+                        <dd>{newProduct.City}</dd>
+                        <dt>Stock</dt>
+                        <dd>{(newProduct.Stock==true)?"Available":"Out of Stock"}</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+Ex:
+ GET            /products                                    all products
+ GET            /products/categories                    all categories
+ GET            /products/category/electronics        specific category
+ GET            /products/1                                specific product
+
+ShoppingComponent.js
+
+
+import { useState, useEffect } from "react";
+
+export default function ShoppingComponent()
+{
+    const [categories, setCategories] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
+    const [itemsCount, setItemsCount] = useState(0);
+
+    function GetCartItemsCount(){
+        setItemsCount(cartItems.length);
+    }
+
+    function LoadCategories(){
+        fetch('http://fakestoreapi.com/products/categories&#39;)
+        .then(response=> response.json())
+        .then(data=> {
+            data.unshift('all');
+            setCategories(data);
+        })
+    }
+
+    function LoadProducts(url){
+        fetch(url)
+        .then(response=> response.json())
+        .then(data=>{
+            setProducts(data);
+        })
+    }
+
+    useEffect(()=>{
+        LoadCategories();
+        LoadProducts('http://fakestoreapi.com/products&#39;);
+    },[])
+
+
+    function handleCategoryChange(e){
+        if(e.target.value=='all'){
+            LoadProducts('http://fakestoreapi.com/products&#39;);
+        } else {
+        LoadProducts(`http://fakestoreapi.com/products/category/${e.target.value}`)
+        }
+    }
+
+    function handleAddtoCart(e){
+            alert("Item Added to Cart");
+            fetch(`http://fakestoreapi.com/products/${e.target.id}`)
+            .then(response=> response.json())
+            .then(data=>{
+                setCartItems(data);
+            })
+            setItemsCount(itemsCount++);
+            GetCartItemsCount();
+    }
+
+    return(
+        <div className="container-fluid">
+          <header className="bg-danger text-white text-center p-2">
+             <h1> <span className="bi bi-cart"></span> Shopping Home</h1>
+          </header>
+          <section className="row mt-3">
+            <nav className="col-2">
+               <div>
+                <label>Select a Category</label>
+                <div>
+                    <select onChange={handleCategoryChange} className="form-select">
+                        {
+                            categories.map(category=>
+                                <option value={category} key={category}>{category.toUpperCase()}</option>
+                                )
+                        }
+                    </select>
+                </div>
+               </div>
+            </nav>
+            <main className="col-8 d-flex flex-wrap overflow-auto" style={{height:'600px'}} >
+                {
+                    products.map(product=>
+                        <div key={product.id} className="card m-2 p-2 w-25">
+                            <img src={product.image} className="card-img-top" height="150" />
+                            <div className="card-header" style={{height:'160px'}}>
+                                <p>{product.title}</p>
+                            </div>
+                            <div className="card-body">
+                                <dl>
+                                    <dt>Price</dt>
+                                    <dd>{product.price}</dd>
+                                    <dt>Rating</dt>
+                                    <dd>
+                                        <span className="bi bi-star-fill text-success"></span>
+                                        {product.rating.rate} <span>[{product.rating.count}]</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div className="card-footer">
+                                <button id={product.id} onClick={handleAddtoCart} className="btn btn-danger w-100">
+                                    <span className="bi bi-cart4"></span> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                        )
+                }
+            </main>
+            <aside className="col-2">
+                <button className="btn btn-danger w-100">
+                    <span className="bi bi-cart3"></span> [{itemsCount}] Your Cart Items
+                </button>
+            </aside>
+          </section>
+        </div>
+    )
+}
+June15:
+Event Binding, State, Two Way Binding
+
+Ex: Shopping Cart
+
+ShoppingComponent.js
+
+
+import { useState, useEffect } from "react";
+
+export default function ShoppingComponent()
+{
+    const [categories, setCategories] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
+    const [itemsCount, setItemsCount] = useState(0);
+
+    function GetCartItemsCount(){
+        setItemsCount(cartItems.length);
+    }
+
+    function LoadCategories(){
+        fetch('http://fakestoreapi.com/products/categories&#39;)
+        .then(response=> response.json())
+        .then(data=> {
+            data.unshift('all');
+            setCategories(data);
+        })
+    }
+
+    function LoadProducts(url){
+        fetch(url)
+        .then(response=> response.json())
+        .then(data=>{
+            setProducts(data);
+        })
+    }
+
+    useEffect(()=>{
+        LoadCategories();
+        LoadProducts('http://fakestoreapi.com/products&#39;);
+    },[cartItems.length])
+
+
+    function handleCategoryChange(e){
+        if(e.target.value=='all'){
+            LoadProducts('http://fakestoreapi.com/products&#39;);
+        } else {
+        LoadProducts(`http://fakestoreapi.com/products/category/${e.target.value}`)
+        }
+    }
+
+    function handleAddtoCart(e){
+            alert("Item Added to Cart");
+            fetch(`http://fakestoreapi.com/products/${e.target.id}`)
+            .then(response=> response.json())
+            .then(data=>{
+                cartItems.push(data);
+                GetCartItemsCount();
+            })
+           
+    }
+
+    return(
+        <div className="container-fluid">
+          <header className="bg-danger text-white text-center p-2">
+             <h1> <span className="bi bi-cart"></span> Shopping Home</h1>
+          </header>
+          <section className="row mt-3">
+            <nav className="col-2">
+               <div>
+                <label>Select a Category</label>
+                <div>
+                    <select onChange={handleCategoryChange} className="form-select">
+                        {
+                            categories.map(category=>
+                                <option value={category} key={category}>{category.toUpperCase()}</option>
+                                )
+                        }
+                    </select>
+                </div>
+               </div>
+            </nav>
+            <main className="col-6 d-flex flex-wrap overflow-auto" style={{height:'600px'}} >
+                {
+                    products.map(product=>
+                        <div key={product.id} className="card m-2 p-2" style={{width:'200px'}}>
+                            <img src={product.image} className="card-img-top" height="150" />
+                            <div className="card-header" style={{height:'160px'}}>
+                                <p>{product.title}</p>
+                            </div>
+                            <div className="card-body">
+                                <dl>
+                                    <dt>Price</dt>
+                                    <dd>{product.price}</dd>
+                                    <dt>Rating</dt>
+                                    <dd>
+                                        <span className="bi bi-star-fill text-success"></span>
+                                        {product.rating.rate} <span>[{product.rating.count}]</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div className="card-footer">
+                                <button id={product.id} onClick={handleAddtoCart} className="btn btn-danger w-100">
+                                    <span className="bi bi-cart4"></span> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                        )
+                }
+            </main>
+            <aside className="col-4">
+                <button className="btn btn-danger w-100">
+                    <span className="bi bi-cart3"></span> [{itemsCount}] Your Cart Items
+                </button>
+                <table className="table table-hover">
+                  <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Preview</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                        cartItems.map(item=>
+                            <tr key={item.id}>
+                                <td>{item.title}</td>
+                                <td>{item.price}</td>
+                                <td>
+                                    <img src={item.image} width="50" height="50" />
+                                </td>
+                                <td>
+                                    <button className="btn btn-danger">
+                                        <span className="bi bi-trash"></span>
+                                    </button>
+                                </td>
+                            </tr>
+                            )
+                    }
+                  </tbody>
+                </table>
+            </aside>
+          </section>
+        </div>
+    )
+}
+                State and Event Binding in Class Component
+
+- Class Component is a JavaScript class that extends "React.Component"
+
+- Class component is configured with implicit state, which is defined in "React.Component" base.
+
+- State in react class component is configure at the time creating object for component. [Constructor]
+
+- In Class component state is defined in constructor.
+
+- State in class component is an JavaScript object with key and value collection.
+
+            constructor(props)
+            {
+                super(props);
+                this.state = {
+                     key : value|number|string|boolean|array|object etc..
+                 }
+            }
+
+
+Ex: One Way Binding
+
+import React from "react";
+
+export default class TwoWayClassDemo extends React.Component
+{
+    constructor(props){
+        super(props)
+        this.state = {
+            title: 'Product Details',
+            Name: 'Samsung TV',
+            Price: 56000.44,
+            Stock: true,
+            Cities: ['Delhi', 'Hyd'],
+            Rating: {rate:4.5, count:6700}
+        }
+    }
+    render(){
+        return(
+            <div className="container-fluid">
+                <h2>{this.state.title}</h2>
+                <dl>
+                    <dt>Name</dt>
+                    <dd>{this.state.Name}</dd>
+                    <dt>Price</dt>
+                    <dd>{this.state.Price}</dd>
+                    <dt>Stock</dt>
+                    <dd>{(this.state.Stock==true)?"Available":"Out of Stock"}</dd>
+                    <dt>Cities</dt>
+                    <dd>
+                        <ol>
+                            {
+                                this.state.Cities.map(city=>
+                                     <li key={city}>{city}</li>
+                                    )
+                            }
+                        </ol>
+                    </dd>
+                    <dt>Rating</dt>
+                    <dd>
+                        <span className="bi bi-star-fill text-success"></span> {this.state.Rating.rate} [{this.state.Rating.count}]
+                    </dd>
+                </dl>
+            </div>
+        )
+    }
+}
+
+- To read the value configure in state of class component your have to refer the key.
+
+            { this.state.key }
+
+- To set the value into state you have to use the method
+
+            this.setState()
+
+- You can't set state at any specified event in DOM, as state is configured at instantiation of component and event is defined after initiantiation.
+
+Note: If your event is trying to use state then your event must bind with state.
+
+            constructor()
+            {
+                 this.handleChange = this.handleChange.bind(this);
+            }
+                    (or)
+
+        <input type="text"  onChange={this.handleChange.bind(this)}>
+
+
+Ex:
+import React from "react";
+
+export default class TwoWayClassDemo extends React.Component
+{
+    constructor(props){
+        super(props)
+        this.state = {
+            UserName: 'John'
+        }
+      //  this.handleUserChange = this.handleUserChange.bind(this);
+    }
+
+    handleUserChange(e){
+        this.setState({
+            UserName: e.target.value
+        })
+    }
+
+    render(){
+        return(
+            <div className="container-fluid">
+               <h2>User Details</h2>
+               <input type="text" onChange={this.handleUserChange.bind(this)} />
+               <br/>
+               <p>Hello ! {this.state.UserName}</p>
+            </div>
+        )
+
+    }
+}
+
+June16:
+Ex: API with class component
+
+import React from "react";
+
+export default class ShoppingClassDemo extends React.Component
+{
+    constructor(props){
+        super(props);
+        this.state = {
+            categories: [],
+            products: []
+        }
+        this.handleCategoryChange = this.handleCategoryChange.bind(this);
+    }
+
+    GetCategories(){
+        fetch('http://fakestoreapi.com/products/categories&#39;)
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({
+                categories: data
+            })
+        })
+    }
+    GetProducts(url){
+        fetch(url)
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({
+                products: data
+            })
+        })
+    }
+
+    componentDidMount(){
+        this.GetCategories();
+        this.GetProducts('http://fakestoreapi.com/products&#39;);
+    }
+
+    handleCategoryChange(e){
+        this.GetProducts(`http://fakestoreapi.com/products/category/${e.target.value}`);
+    }
+
+    render(){
+        return(
+            <div className="container-fluid">
+              <header className="bg-danger p-2 text-white text-center">
+                <h2><span className="bi bi-cart"></span> Shopping Cart</h2>
+              </header>
+              <section className="row">
+                <nav className="col-3">
+                    <h2>Select Category</h2>
+                    <select onChange={this.handleCategoryChange} className="form-select">
+                        {
+                            this.state.categories.map(category=>
+                                <option key={category}>{category}</option>
+                                )
+                        }
+                    </select>
+                </nav>
+                <main className="col-9">
+                    <div className="d-flex flex-wrap">
+                        {
+                            this.state.products.map(product=>
+                                <div key={product.id} className="card m-2 p-2" style={{width:'200px'}}>
+                                    <img  src={product.image} className="card-img-top" height="150" />
+                                    <div className="card-header" style={{height:'160px'}}>
+                                        <p>{product.title}</p>
+                                    </div>
+                                </div>
+                                )
+                        }
+                    </div>
+                </main>
+              </section>
+            </div>
+        )
+    }
+}
+
+                             React Component Properties
+- Component is template.
+- Markup, styles, functionality.
+- We can reuse any component.
+- We have to reuse the same component with different data.
+- Properties allows to pass data dynamically into any component.
+- Properties are same in both
+        a) Function Component
+        b) Class Component
+
+Syntax:
+    export function Card(props)
+    {
+            return(
+                <markup>{props}</markup>
+            )
+    }
+
+    <Card  props={value}> </Card>
+
+   props = {
+         key:value;
+    }
+
+   props = {
+        product: product;
+   }
+
+Ex:  Function Component
+
+CardComponent.js
+
+
+export function CardComponent(props)
+{
+    return(
+        <div className="card m-2 p-2" style={{width:'200px'}}>
+             <img src={props.product.image} className="card-img-top" height="160" />
+             <div className="card-header" style={{height:'160px'}}>
+                <p>{props.product.title}</p>
+             </div>
+        </div>
+    )
+}
+
+
+ShoppingComponent.js
+
+import React from "react";
+import { CardComponent } from "./CardComponent";
+
+export default class ShoppingClassDemo extends React.Component
+{
+    constructor(props){
+        super(props);
+        this.state = {
+            categories: [],
+            products: []
+        }
+        this.handleCategoryChange = this.handleCategoryChange.bind(this);
+    }
+
+    GetCategories(){
+        fetch('http://fakestoreapi.com/products/categories&#39;)
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({
+                categories: data
+            })
+        })
+    }
+    GetProducts(url){
+        fetch(url)
+        .then(response=>response.json())
+        .then(data=>{
+            this.setState({
+                products: data
+            })
+        })
+    }
+
+    componentDidMount(){
+        this.GetCategories();
+        this.GetProducts('http://fakestoreapi.com/products&#39;);
+    }
+
+    handleCategoryChange(e){
+        this.GetProducts(`http://fakestoreapi.com/products/category/${e.target.value}`);
+    }
+
+    render(){
+        return(
+            <div className="container-fluid">
+              <header className="bg-danger p-2 text-white text-center">
+                <h2><span className="bi bi-cart"></span> Shopping Cart</h2>
+              </header>
+              <section className="row">
+                <nav className="col-3">
+                    <h2>Select Category</h2>
+                    <select onChange={this.handleCategoryChange} className="form-select">
+                        {
+                            this.state.categories.map(category=>
+                                <option key={category}>{category}</option>
+                                )
+                        }
+                    </select>
+                </nav>
+                <main className="col-9">
+                    <div className="d-flex flex-wrap">
+                        {
+                            this.state.products.map(product=>
+                                 <CardComponent key={product.id} product={product} />
+                                )
+                        }
+                    </div>
+                </main>
+              </section>
+            </div>
+        )
+    }
+}
+
+
+Ex: Class Component
+
+import React from "react";
+
+export default class CardComponent extends React.Component
+{
+    constructor(props){
+        super(props);
+    }
+    render(){
+        return(
+            <div className="card m-2 p-2" style={{width:'200px'}}>
+             <img src={this.props.product.image} className="card-img-top" height="160" />
+             <div className="card-header" style={{height:'160px'}}>
+                <p>{this.props.product.title}</p>
+             </div>
+          </div>
+        )
+    }
+}
+
+                                Data Binding
+                                Style Binding
+                                Class Binding
+                                Event Binding
+
+<div  style="width:200px">
+<div  style={{width:'200px'}}>            // Virtual DOM
+
+- React Style Binding allows to change the styles dynamically.
+- React Class binding allows to change the class dynamically.
+- JavaScript uses "style" property
+
+            element.style.backgroundColor = 'red';
+           
+            <div style={{ }}>
+
+                           
+Ex:
+import { useState } from "react"
+
+
+export default function LoginComponent()
+{
+    const [theme, setTheme] = useState({});
+
+    function handleThemeChange(e){
+        if(e.target.checked) {
+            setTheme({
+                backgroundColor: 'black',
+                color:'white',
+                width: '250px',
+                padding:'10px'
+            })
+        } else {
+            setTheme({
+                backgroundColor: 'white',
+                color:'black',
+                width: '250px',
+                padding:'10px'
+            })
+        }
+    }
+
+    return(
+        <div className="container-fluid">
+            <div style={theme}>
+            <h2>User Login</h2>
+            <div className="form-switch">
+                <input onChange={handleThemeChange} className="form-check-input" type="checkbox"/> Dark Theme
+            </div>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" /></dd>
+                <dt>Password</dt>
+                <dd><input type="password"/></dd>
+            </dl>
+            <button>Login</button>
+            </div>
+        </div>
+    )
+}
+
+Ex:
+import { useState } from "react"
+
+
+export default function LoginComponent()
+{
+    const [theme, setTheme] = useState('');
+
+    function handleThemeChange(e){
+        if(e.target.checked) {
+            setTheme('bg-dark text-white p-2 w-50')
+        } else {
+            setTheme('bg-light text-dark p-2 w-50')
+        }
+    }
+
+    return(
+        <div className="container-fluid">
+            <div className={theme}>
+            <h2>User Login</h2>
+            <div className="form-switch">
+                <input onChange={handleThemeChange} className="form-check-input" type="checkbox"/> Dark Theme
+            </div>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text" /></dd>
+                <dt>Password</dt>
+                <dd><input type="password"/></dd>
+            </dl>
+            <button>Login</button>
+            </div>
+        </div>
+    )
+}
+
+june17:
+Forms and Validations
+                            -------------------------------
+- Form Interactions and Validations are managed by using event and data binding techniques.
+- React uses event and data binding implicitly without any additional libraries.
+- React events are SyntheticEvents that map to DOM events.
+- React can also use style and class binding for validation styles.
+
+Keyboard Events
+-----------------------
+onKeyUp                        ]   keycode
+onKeyDown                    ]
+onKeyPress
+
+Key Properties
+-------------------
+keyCode            
+charCode
+which
+shiftKey
+altKey
+ctrlKey
+
+Ex: Form and Validations
+
+
+import { useState } from "react";
+
+export default function FormComponent(){
+
+    const [users] = useState([
+        {UserId:'john'},
+        {UserId:'john12'},
+        {UserId:'david'},
+        {UserId:'john_nit'}
+    ]);
+    const [userMsg, setUserMsg] = useState('');
+    const [isUserValid, setUserValid] = useState(false);
+    const [pwdMsg, setPwdMsg] = useState('');
+    const [capsStatus, setCapsStatus] = useState(false);
+    const [cityMsg, setCityMsg] = useState('');
+    const [userDetails, setUserDetails] = useState({UserId:'', Password:'', City:''});
+
+    function VerifyUserId(e){
+        for(var user of users)
+        {
+            if(user.UserId==e.target.value) {
+                setUserMsg('User Id Taken - Try Another');
+                setUserValid(false);
+                break;
+            } else {
+                setUserMsg('User Id Available');
+                setUserValid(true);
+            }
+        }
+    }
+    function HideUserMsg(e){
+        if(e.target.value=="") {
+            setUserMsg('User Id Required');
+        } else {
+            setUserMsg('');
+        }
+    }
+
+    function VerifyPassword(e){
+        if(e.target.value.match(/(?=.*[A-Z])\w{4,10}/))
+        {
+            setPwdMsg('Strong Password');
+        } else {
+            if(e.target.value.length<4){
+                setPwdMsg('Poor Password');
+            } else {
+                setPwdMsg('Weak Password');
+            }
+        }
+    }
+    function HidePasswordMsg(){
+        setPwdMsg('');
+        setCapsStatus(false);
+    }
+
+    function VerifyCaps(e){
+        if(e.keyCode>=65 && e.keyCode<=90 || e.which>=65 && e.which<=90) {
+            setCapsStatus(true);
+        } else {
+            setCapsStatus(false);
+        }
+    }
+    function VerifyCity(e){
+        if(e.target.value=="notcity") {
+            setCityMsg('Please Select a City');
+        } else {
+            setCityMsg('');
+        }
+    }
+    function HandleUserChange(e) {
+        setUserDetails({
+            UserId : e.target.value,
+            Password: userDetails.Password,
+            City: userDetails.City
+        })
+    }
+    function HandlePasswordChange(e) {
+        setUserDetails({
+            UserId : userDetails.UserId,
+            Password: e.target.value,
+            City: userDetails.City
+        })
+    }
+    function RegisterClick(){
+        alert(JSON.stringify(userDetails));
+    }
+
+    return(
+        <div className="container-fluid">
+            <h2>Register User</h2>
+            <dl>
+                <dt>User Id</dt>
+                <dd><input type="text" onChange={HandleUserChange} onBlur={HideUserMsg} onKeyUp={VerifyUserId} /></dd>
+                <dd className={(isUserValid==true)?'text-success':'text-danger'} >{userMsg}</dd>
+                <dt>Password</dt>
+                <dd>
+                    <input type="password" onChange={HandlePasswordChange} onKeyPress={VerifyCaps} onBlur={HidePasswordMsg} onKeyUp={VerifyPassword} />
+                </dd>
+                <dd>{pwdMsg}</dd>
+                <dd className={(capsStatus==true)?'d-block':'d-none'}>
+                    <span className="text-warning"><span className="bi bi-exclamation-triangle"></span> Caps ON</span>
+                </dd>
+                <dt>Your City</dt>
+                <dd>
+                    <select onChange={VerifyCity}>
+                        <option value="notcity">Select Your City</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Hyd">Hyd</option>
+                    </select>
+                </dd>
+                <dd className="text-danger">{cityMsg}</dd>
+            </dl>
+            <button onClick={RegisterClick}>Register</button>
+        </div>
+    )
+}
+           
+ 
+June20:
+Software Development GAPS
+
+1. AS-IS   : Defines what your technology is capable of.
+2. To-BE  : Defines what client requirements are.
+3. GAP     : Defines the functionalities not supported by your technology
+                and client needs them.
+
+How to fill the GAP?
+- By using 3rd Party Implementations.
+
+Why React Needs 3rd Party?
+- It is not designed for what you are using.
+- Hence lot of GAPS.
+- 3rd Party can fill the GAPS.
+
+What are the popular 3rd Party for Forms in React?
+- Formik                            [Popular]
+- KendoForms
+- React-Hook-Forms            [Trending] React 16+ version
+- React-Final-Forms etc..
+
+                "npmjs.com"
+
+1. Install Formik Library for your project
+
+        > npm install  formik --save                    [MIT]
+
+
+2. Import "useFormik" hook
+
+   import { useFormik } from "formik"
+
+3. Configure formik form with values and submit event.
+
+    const  formik = useFormik({
+               initialValues: { },
+            onSubmit : function() { }
+    })
+
+    * initialValues is an object that defines the values to use for form.
+    * onSubmit defines the actions to perform on form submit
+
+4. You have to bind the formik values and events to form elements.
+
+     <input type="text"  value={formik.values.UserName} onChange={formik.handleChange} />
+
+     <form onSubmit={formik.handleSubmit}>
+
+
+5. You can present the values or submit
+
+        <dd> { fromik.values.UserName } </dd>
+
+        onSubmit : values => {
+             alert(JSON.stringfy(values);
+          }
+
+Ex: FormikDemo.js
+
+
+import { useFormik } from "formik"
+
+export default function FormikDemo()
+{
+    const formik = useFormik({
+        initialValues : {
+            UserName: '',
+            Password: '',
+            City: ''
+        },
+        onSubmit: values => {
+            alert(JSON.stringify(values));
+        }
+    })
+    return(
+        <div className="container-fluid">
+            <form onSubmit={formik.handleSubmit}>
+                <h2>Register User</h2>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input name="UserName" onChange={formik.handleChange} value={formik.values.UserName} type="text"/></dd>
+                    <dt>Password</dt>
+                    <dd><input name="Password" onChange={formik.handleChange} value={formik.values.Password} type="password"/></dd>
+                    <dt>City</dt>
+                    <dd>
+                        <select onChange={formik.handleChange} value={formik.values.City} name="City">
+                            <option>Delhi</option>
+                            <option>Hyd</option>
+                        </select>
+                    </dd>
+                </dl>
+                <button>Register</button>
+            </form>
+        </div>
+    )
+}
+
+
+Ex: With Boolean
+
+import { Formik, useFormik } from "formik"
+
+export default function FormikDemo()
+{
+    const formik = useFormik({
+        initialValues : {
+            UserName: '',
+            Password: '',
+            City: '',
+            Subscribe: true
+        },
+        onSubmit: values => {
+            alert(`${values.UserName}\nSubscription: ${(values.Subscribe==true)?"Subscribed":"Not Subscribed"}`);
+        }
+    })
+    return(
+        <div className="container-fluid">
+            <form onSubmit={formik.handleSubmit}>
+                <h2>Register User</h2>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input name="UserName" onChange={formik.handleChange} value={formik.values.UserName} type="text"/></dd>
+                    <dt>Password</dt>
+                    <dd><input name="Password" onChange={formik.handleChange} value={formik.values.Password} type="password"/></dd>
+                    <dt>City</dt>
+                    <dd>
+                        <select onChange={formik.handleChange} value={formik.values.City} name="City">
+                            <option>Delhi</option>
+                            <option>Hyd</option>
+                        </select>
+                    </dd>
+                    <dt>Subscribe</dt>
+                    <dd className="form-switch"><input className="form-check-input" name="Subscribe" onChange={formik.handleChange} checked={formik.values.Subscribe} type="checkbox" /> Yes</dd>
+                </dl>
+                <button>Register</button>
+            </form>
+        </div>
+    )
+}
+June21:
+- Designed form using "Formik"
+
+                                Formik Validations
+- Validation is the process of verifying user input.
+- Validation is required to ensure that contradictionary and unauthorized data is not get stored into the database.
+- React can handle validations without help of third party by using JavaScript functions.
+                isNaN()
+                indexOf()
+                typeof etc..
+- React have to use various events to verify the value
+                onBlur
+                onKeyup
+                onFocus
+                onChange etc..
+- Formik can use validation, from validation function that returns errors object.
+- You have to use JavaScript methods for verifying the value.
+
+Step-1: Create a function for accepting form values, verifying the values and reporting error
+s.
+
+            function  ValidateForm(values)
+            {
+                  const errors = { };
+                  if(values.Name=="") {  errors.Name="Required" }
+                  if(values.Email=="")  {  errors.Email="Required" }
+                  return errors;
+            }
+
+
+Step-2: Formik have to use the validation function
+
+
+          var formik = useFormik({
+                initialValues: { },
+                onSubmit: function() { },
+                validate: validateForm
+        })
+
+Step-3: Bind the Error Messages with UI
+
+        <span> {formik.errors.Name} </span>
+import { useFormik } from "formik";
+
+
+export default function FormikValidation()
+{
+
+    function ValidateUser(userDetails)
+    {
+        const errors = {};
+        if(userDetails.UserName==""){
+            errors.UserName = "User Name Required";
+        }
+        if(userDetails.Mobile.match(/\+91\d{10}/)) {
+            errors.Mobile="";
+        } else {
+            errors.Mobile="Invalid Mobile";
+        }
+        return errors;
+    }
+
+    const formik = useFormik({
+        initialValues: {
+            UserName: '',
+            Mobile: ''
+        },
+        validate: ValidateUser,
+        onSubmit: values=> {
+            alert(JSON.stringify(values));
+        }
+    })
+    return(
+        <div className="container-fluid">
+            <h2>Register User</h2>
+            <form onSubmit={formik.handleSubmit}>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input name="UserName" onBlur={formik.handleBlur} onChange={formik.handleChange} type="text"/></dd>
+                    <dd className="text-danger">{formik.errors.UserName}</dd>
+                    <dt>Mobile</dt>
+                    <dd><input name="Mobile" onChange={formik.handleChange} type="text"/></dd>
+                    <dd className="text-danger">{formik.errors.Mobile}</dd>
+                </dl>
+                <button>Submit</button>
+            </form>
+        </div>
+    )
+}
+june22:
+Forms with traditional react approach
+Forms using 3rd Party
+Formik
+  initialValues
+  onSubmit
+  handleChange
+  handleBlur
+
+                            Formik Validations
+- You configure validation for every element in page by using validation function.
+- Formik uses a validation function
+
+Syntax:
+            function ValidationFunction(formDetails)
+            {
+                 const errors = { };
+                 ..write logic for verifying every field...
+                 return errors;
+            }
+
+            useFormik({
+                initialValues: { },
+                validation: ValidationFunction
+            })
+
+- You can access error message by using
+
+            { formik.errors.Name }
+
+
+Ex: Simple Validation
+
+import { useFormik } from "formik";
+
+export default function FormikValidation()
+{
+    function VerifyUserDetails(userDetails)
+    {
+        const errors = {};
+        if(userDetails.UserName==""){
+            errors.UserName = "User Name Required";
+        }
+        if(userDetails.Age=="") {
+            errors.Age = "Age Required";
+        }
+        if(userDetails.Email=="") {
+            errors.Email = "Email Required";
+        }
+        return errors;
+    }
+    const formik = useFormik({
+        initialValues: {
+            UserName: '',
+            Age: 0,
+            Email:''
+        },
+        validate: VerifyUserDetails,
+        onSubmit: values => {
+            alert(JSON.stringify(values));
+        }
+    })
+    return(
+        <div className="container-fluid">
+            <form onSubmit={formik.handleSubmit}>
+                <h2>Register User</h2>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input name="UserName" onChange={formik.handleChange} type="text"/></dd>
+                    <dd className="text-danger">{formik.errors.UserName}</dd>
+                    <dt>Age</dt>
+                    <dd><input name="Age" onChange={formik.handleChange} type="text"/></dd>
+                    <dd className="text-danger">{formik.errors.Age}</dd>
+                    <dt>Email</dt>
+                    <dd><input name="Email" onChange={formik.handleChange} type="text"/></dd>
+                    <dd className="text-danger">{formik.errors.Email}</dd>
+                </dl>
+                <button>Register</button>
+            </form>
+        </div>
+    )
+}
+
+Ex: Multiple Validations for every field
+
+import { useFormik } from "formik";
+
+export default function FormikValidation()
+{
+    function VerifyUserDetails(userDetails)
+    {
+        const errors = {};
+        if(userDetails.UserName==""){
+            errors.UserName = "User Name Required";
+        } else if(userDetails.UserName.length<4){
+            errors.UserName = "Name too short..";
+        } else if(userDetails.UserName.length>10){
+            errors.UserName = "Name too long..";
+        }
+
+ 
+        if(userDetails.Email=="") {
+            errors.Email = "Email Required";
+        }else if(userDetails.Email.indexOf("@")<=2) {
+            errors.Email = "Invalid Email";
+        }
+
+        if(userDetails.Mobile=="") {
+            errors.Mobile = "Mobile Required";
+        }
+        else if(userDetails.Mobile.match(/\+91\d{10}/)) {
+            errors.Mobile = "";
+        } else {
+            errors.Mobile = "Invalid Mobile"
+        }
+
+        return errors;
+    }
+    const formik = useFormik({
+        initialValues: {
+            UserName: '',
+            Age: 0,
+            Email:'',
+            Mobile:''
+        },
+        validate: VerifyUserDetails,
+        onSubmit: values => {
+            alert(JSON.stringify(values));
+        }
+    })
+    return(
+        <div className="container-fluid">
+            <form onSubmit={formik.handleSubmit}>
+                <h2>Register User</h2>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input name="UserName" onChange={formik.handleChange} type="text"/></dd>
+                    <dd className="text-danger">{formik.errors.UserName}</dd>
+                    <dt>Age</dt>
+                    <dd><input name="Age" onChange={formik.handleChange} type="text"/></dd>
+                    <dd className="text-danger">{formik.errors.Age}</dd>
+                    <dt>Email</dt>
+                    <dd><input name="Email" onChange={formik.handleChange} type="text"/></dd>
+                    <dd className="text-danger">{formik.errors.Email}</dd>
+                    <dt>Mobile</dt>
+                    <dd><input type="text" name="Mobile" onChange={formik.handleChange} /></dd>
+                    <dd className="text-danger">{formik.errors.Mobile}</dd>
+                </dl>
+                <button>Register</button>
+            </form>
+        </div>
+    )
+}
+
+                            Yup Library
+- It simplifies the form and its validation.
+- Yup library provides validation schemas
+- Every validation schema [structure] defines the type and range of value.
+- Validation Schema is Data Structure.
+- Explicitly you don't need any function to verify the data type or range.
+                       
+                    JavaScript
+                    - isNaN
+                    - typeof
+                    - instanceof
+                    - in  etc..
+
+                var x = "true";
+                var result = (x=="true")true?false;
+
+- Yup Library provides schemas to verify type
+        BooleanSchema            boolean()
+        NumberSchema            number()
+        StringSchema etc..        string()
+
+- Yup library provides functions for verifying range and pattern.
+        min()
+        max()
+        maxlength()
+        minlength()
+        required()
+        pattern()
+        email() etc..
+
+1. Install Yup library for project
+
+        >npm install yup --save
+
+2. Import Validation Schemas in component
+
+        import  { BooleanSchema, NumberSchema,.. } from 'yup';
+
+        import  * as yup from 'yup';
+
+3. Formik can use Yup validation schema by using
+        "validationSchema" property
+
+     const formik = useFormik({
+            initialValues: { },
+          validationSchema: yup.object({
+                 FieldName: yup.DataType().required().min(4).max(10)
+            })
+    })
+
+4. You have to bind the fields with HTML elements
+
+    <input type="text" {...formik.getFieldProps("Name")}>
+    <dd>{formik.errors.Name}</dd>
+
+Ex: Yup Validation
+
+import { useFormik } from "formik";
+import  * as yup from 'yup';
+
+export default function YupValidation()
+{
+    const formik = useFormik({
+        initialValues: {
+            UserName: '',
+            Email: '',
+            Age: 0
+        },
+        validationSchema: yup.object({
+            UserName: yup.string()
+                         .required('User Name Required')
+                         .min(4, 'Name too short')
+                         .max(10, 'Name too Long..'),
+            Email: yup.string()
+                      .required('Email Required')
+                      .email('Invalid Email'),
+            Age: yup.number()
+                    .required('Age Required')
+        }),
+        onSubmit : values => {
+            alert(JSON.stringify(values));
+        }
+    })
+    return(
+        <div className="container-fluid">
+            <form onSubmit={formik.handleSubmit}>
+                <h2>Register User</h2>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input {...formik.getFieldProps("UserName")} type="text"/></dd>
+                    <dd className="text-danger">{formik.errors.UserName}</dd>
+                    <dt>Email</dt>
+                    <dd><input {...formik.getFieldProps("Email")} type="text"/></dd>
+                    <dd className="text-danger">{formik.errors.Email}</dd>
+                    <dt>Age</dt>
+                    <dd><input {...formik.getFieldProps("Age")} type="text"/></dd>
+                    <dd className="text-danger">{formik.errors.Age}</dd>
+                </dl>
+                <button>Register</button>
+            </form>
+        </div>
+    )
+}
+
+Ex: Yup Validation Components
+
+June23:
+Formik - Validation with Yup
+
+Level-1:   Without Formik
+
+ - We designed custom function for validation
+ - Custom validation messages
+ - Custom Binding of Events
+
+Level-2:  With Formik
+ - Custom Function for Validation
+ - Custom Validation Messages
+ - No Binding Events required, We use pre-defined events of formik.
+
+Level-3:  Formik with Yup
+- No custom validation
+- Pre-defined Validation Schema
+- Pre-defined Errors
+- We use pre-defined events of formik
+
+Level-4: Formik Components
+- Formik provides pre-defined components for designing a form, form field and error message.
+- From level-1 to 3 we used HTML form, span, div, input, select etc..
+- Formik provides components
+
+            <Formik>
+            <Form>
+            <Field>
+            <ErrorMessage>
+
+<Formik>            : It configures a container that can handle form.
+<Form>                : It configures a Form with set of fields.
+<Field>                : It configures a form element like text, checkbox, radio, etc..
+<ErrorMessage>    : It configures a container that can catch the errors returned
+                          by name.
+
+
+Syntax:
+
+<Formik initialValues={}  validationSchema={}  onSubmit={()=>{}}>
+    <Form>
+      {
+         <Field name="Mobile" type="text|number|email|password.."></Field>
+          <Field as="select | textarea | datalist | meter | progress">
+        <ErrorMessage name="Mobile"></ErrorMessage>
+      }
+    </Form>
+</Formik>
+
+Model Binding - Name and Location Mapping - MVC
+
+View:
+<Field>
+<ErrorMessage>
+
+Controller:
+ handleChange
+ handleBlur
+ handleSubmit
+
+Model:
+ name
+ value
+ checked
+
+Ex: YupValidationComponent
+
+
+import { useFormik, Formik, Field, ErrorMessage, Form } from "formik";
+import  * as yup from 'yup';
+
+export default function YupValidationComponent()
+{
+    return(
+        <div className="container-fluid">
+            <h2>Register User</h2>
+            <Formik initialValues={
+                {
+                    UserName: '',
+                    Email:'',
+                    Age: '',
+                    City: ''
+                }}
+                validationSchema={
+                   yup.object({
+                     UserName: yup.string().min(4,'Name too short').max(10, 'Name too long').required('Name Required'),
+                     Email: yup.string().email('Invalid Email').required('Email Required'),
+                     Age: yup.number().required('Age Required'),
+                     City: yup.string()
+                   })
+                }
+                onSubmit={
+                    values=>{
+                        alert(JSON.stringify(values))
+                    }
+                }
+                >
+                <Form>
+                    {
+                       <div>
+                         <dl>
+                            <dt>User Name</dt>
+                            <dd><Field name="UserName" type="text"></Field></dd>
+                            <dd className="text-danger"><ErrorMessage name="UserName"></ErrorMessage></dd>
+                            <dt>Email</dt>
+                            <dd><Field name="Email" type="text"></Field></dd>
+                            <dd className="text-danger">
+                                <ErrorMessage name="Email"></ErrorMessage>
+                            </dd>
+                            <dt>Age</dt>
+                            <dd><Field name="Age" type="text"></Field></dd>
+                            <dd className="text-danger">
+                                <ErrorMessage name="Age"></ErrorMessage>
+                            </dd>
+                            <dt>City</dt>
+                            <dd><Field name="City" as="select">
+                                 <option>Delhi</option>
+                                 <option>Hyd</option>
+                                </Field></dd>
+                        </dl>
+                         <button>Register</button>
+                       </div>
+                    }
+                </Form>
+            </Formik>
+        </div>
+    )
+}
+
+                                        Validation State
+- Validation state defines the validation status of form and field.
+- It can crawl over all fields in a form and verify the validation state:
+                true        : valid
+                false        : invalid
+
+- Formik and Yup provides validation state at 2 levels
+        a) Form State Validation        [ Verifying All Fields]
+        b) Input State Validation        [ Verifying specific Field]
+
+- For Input state validation you can use <ErrorMessage>
+- For Form state validation you can use the validation properties returned by <Form> component.
+- Form Validation State includes
+
+        a) isValid                true if all fields are valid
+        b) dirty                true if any one field modified
+        c) touched            true on blur
+
+        props => <Form</Form>
+
+Ex: Validation State
+
+import { useFormik, Formik, Field, ErrorMessage, Form } from "formik";
+import  * as yup from 'yup';
+
+export default function YupValidationComponent()
+{
+    return(
+        <div className="container-fluid">
+            <h2>Register User</h2>
+            <Formik initialValues={
+                {
+                    UserName: '',
+                    Email:'',
+                    Age: '',
+                    City: ''
+                }}
+                validationSchema={
+                   yup.object({
+                     UserName: yup.string().min(4,'Name too short').max(10, 'Name too long').required('Name Required'),
+                     Email: yup.string().email('Invalid Email').required('Email Required'),
+                     Age: yup.number().required('Age Required'),
+                     City: yup.string()
+                   })
+                }
+                onSubmit={
+                    values=>{
+                        alert(JSON.stringify(values))
+                    }
+                }
+                >
+                {
+                    fields =>
+                    <Form>
+                        {
+                       <div>
+                         <dl>
+                            <dt>User Name</dt>
+                            <dd><Field name="UserName" type="text"></Field></dd>
+                            <dd className="text-danger"><ErrorMessage name="UserName"></ErrorMessage></dd>
+                            <dt>Email</dt>
+                            <dd><Field name="Email" type="text"></Field></dd>
+                            <dd className="text-danger">
+                                <ErrorMessage name="Email"></ErrorMessage>
+                            </dd>
+                            <dt>Age</dt>
+                            <dd><Field name="Age" type="text"></Field></dd>
+                            <dd className="text-danger">
+                                <ErrorMessage name="Age"></ErrorMessage>
+                            </dd>
+                            <dt>City</dt>
+                            <dd><Field name="City" as="select">
+                                 <option>Delhi</option>
+                                 <option>Hyd</option>
+                                </Field></dd>
+                        </dl>
+                         <button disabled={(fields.isValid)?false:true} >Register</button>
+                       </div>
+                        }  
+                    </Form>
+                   
+                }
+            </Formik>
+        </div>
+    )
+}
+
+June24:
+Summary
+- Components
+- Data Binding
+- Style Binding
+- Class Binding
+- Event Binding
+- Forms                                
+- Form Validations
+
+                          Component Life Cycle Hooks
+                         ----------------------------------------
+
+- High Level Architecture for React Application
+
+- Component Life Cycle Starts when the component is created and loaded by application.
+- Component life cycle comprises of 3 phases
+        a) Mounting
+        b) Updating
+        c) UnMounting
+
+- Mounting configures the actions to perform at the time of loading component
+        a) componentWillMount()        allocates memory
+        b) componentDidMount()            renders output
+
+- Updating configure the actions to perform on "Change Detection", which include event, style, data, class binding techniques.
+
+        a) setState()
+        b) forceUpdate()
+        c) getProps()
+
+                ...fomik.getFieldProps("Name")
+        d) componentDidMount()
+
+- Unmounting configures the actions to perform when a component is unloaded and another component is requested. It includes
+        - unsubscribe to events    
+        - clean up the memory
+        - unload
+
+        a) componentWillUnMount()
+
+- In React upto 16 version these hooks are provided with class component.
+- React 16+ version provides life cycle hooks for function components.
+
+FAQ: How component unmount and mount are defined in function component?
+Ans:   useEffect()
+
+        useEffect(()=> {
+            // defines actions on mount
+             return(()=>{
+                   // define action on unmount
+            })
+        },[])
+
+
+Ex:
+import React from "react";
+
+class SuccessComponent extends React.Component
+{
+    componentDidMount(){
+        alert('Success Component will render');
+    }
+    componentWillUnmount(){
+        alert('Success Component will unmount');
+    }
+    render(){
+        return(
+            <div>
+                <h2>Login Success..</h2>
+            </div>
+        )
+    }
+}
+class ErrorComponent extends React.Component
+{
+    componentDidMount(){
+        alert('Error Component will render');
+    }
+    componentWillUnmount(){
+        alert('Error Component will unmount');
+    }
+    render(){
+        return(
+            <div>
+                <h2>Invalid Login</h2>
+            </div>
+        )
+    }
+}
+
+export default class LifeCycleDemo extends React.Component
+{
+    constructor(props){
+        super(props);
+        this.state = {
+            userDetails: {
+                UserName: 'john_nit',
+                Password: 'john@11'
+            },
+            formDetails: {
+                UserName: '',
+                Password: ''
+            },
+            result: ''
+        }
+        this.handleUserName = this.handleUserName.bind(this);
+        this.handlePassword = this.handlePassword.bind(this);
+        this.handleLoginClick = this.handleLoginClick.bind(this);
+    }
+
+    handleUserName(event){
+        this.setState({
+            formDetails: {
+                UserName: event.target.value,
+                Password: this.state.formDetails.Password
+            }
+        })
+    }
+    handlePassword(event){
+        this.setState({
+            formDetails: {
+                UserName: this.state.formDetails.UserName,
+                Password: event.target.value
+            }
+        })
+    }
+    handleLoginClick(){
+        if(this.state.formDetails.UserName==this.state.userDetails.UserName && this.state.formDetails.Password==this.state.userDetails.Password) {
+            this.setState({
+                result: <SuccessComponent />
+            })
+        } else {
+            this.setState({
+                result: <ErrorComponent />
+            })
+        }
+    }
+
+    render(){
+        return(
+            <div className="container">
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input onChange={this.handleUserName} type="text"/></dd>
+                    <dt>Password</dt>
+                    <dd><input onChange={this.handlePassword} type="password"/></dd>
+                </dl>
+                <button onClick={this.handleLoginClick}>Login</button>
+                <div>
+                    {this.state.result}
+                </div>
+            </div>
+        )
+    }
+}
+June27:
+React Life Cycle Hooks in Class Component
+- Mounting
+- Updating
+- Unmount
+
+FAQ: What is difference between constructor and componentWillMount() ?
+Ans:
+ - Constructor configures the functionality for component at the time of creating component.
+ - ComponentWillMount() initializes funcitonality after component is
+   created. It defines the functionality when component is requested.
+ - Constructor defines actions like
+        a) creating state
+        b) binding events to state
+ - ComponentWillMount() defines actions like
+        a) connecting with API
+        b) using context
+
+FAQ: What is Change Detection?
+Ans:  It is a technique used in applications where the changes in value are identified.
+
+FAQ: Who manages change detection in react?
+Ans:  componentWillUpdate()
+
+FAQ: How it identifies the changes?
+Ans:  By using a software design pattern called
+        "Single-Source-Of-Truth"
+        It verfies the previous value with current value.
+
+        previous value == current value => no change detected.
+        previous value != current value => change detected.
+
+        Model is reffered as "single source of truth" as it contains the
+        data.
+
+FAQ: In which phase of component life cycle "Change Detection" occurs.
+Ans:  Updating
+
+
+                                React Hooks
+- React 16+ versions introduced  "React Hooks" as alternative form component life cycle hooks.
+
+- Component life cycle hooks are available only for class components.
+
+- React Hooks are not replacement for component life cycle hooks, they are just alternative.
+
+- React 16+ versions made funciton component better than class components.
+
+- React 16+ versions provides several built-in hooks and also allows to create custom hooks.
+
+- React 18 introduced few new hooks into React funciton components.
+- React Hooks are backward compatible.
+
+FAQ: What is the role and responsibiltiy of React Hooks?
+Ans:
+React DOM manipulations
+React DOM server
+React Test Render
+React Shallow Renderer      
+
+DOM Manipulations:
+- Adding element
+- Removing element
+- Updating data into element
+
+DOM Server
+- WebSocket
+- Identifies the changes and update the changes in DOM.
+- It can push updates without reloading.
+- Implicit Ajax
+
+Test Render
+- Render is the process of generating output.
+- Creates a layout
+- Render the layout
+
+Shallow Render
+- It is the process between render and painting
+
+
+Note: Component LifeCycle Hooks are only about life cycle events.
+         React Hooks are more than Life Cycle.
+
+Pre-define React Hooks:
+----------------------------------
+useToggle
+useFirestoreQuery
+useMemoCompare
+useAsync
+useRequireAuth
+useRouter
+useAuth
+useEventListener
+useWhyDidYouUpdate
+useDarkMode
+useMedia
+useLockBodyScroll
+useTheme
+useSpring
+useHistory    “react-router-dom”
+useLocation     “react-router-dom”
+useParams     “react-router-dom”
+useScript
+useKeyPress
+useMemo
+useDebounce
+useOnScreen
+usePrevious
+useOnClickOutside
+useAnimation
+useEffect
+useState
+useLocalStore
+useHover  etc.
+
+
+
+Rules for Configuring Hooks:
+1. React Hooks can't be defined in Class.
+2. React Hooks only for function component.
+3. Hooks must be at top level.
+4. You can't define hooks inside a JavaScript function.
+5. Can't use hooks in conditions and iterations.
+
+
+                                useState Hook
+                                ---------------------
+- It configures a state for component.
+- State can store values and make it available until the component unmount.
+- You can store any value into state.
+
+Syntax:
+           const [product, setProduct] = useState({});
+         const [products, setProducts] = useState([]);
+
+         setProduct({ });
+         setProducts([]);
+
+                                useEffect Hook
+                                ---------------------
+- It can manage
+        a) mounting
+        b) updating
+        c) unmount
+
+Syntax:
+               useEffect(()=> {
+                     // actions on mount
+                    // actions on update
+                    return(()=>{
+                        // actions on unmount
+                    })
+               },[ ])
+
+
+Ex:
+import { useState, useEffect } from "react"
+
+export default function ReactHookDemo()
+{
+    const [msg, setMsg] = useState();
+
+    function handleSuccessClick(){
+        setMsg(<SuccessComponent/>)
+    }
+
+    function handleErrorClick(){
+        setMsg(<ErrorComponent />)
+    }
+
+    return(
+        <div className="container-fluid">
+            <button onClick={handleSuccessClick}>Success</button>
+            <button onClick={handleErrorClick}>Invalid</button>
+            <hr />
+            <div>
+                {msg}
+            </div>
+        </div>
+    )
+}
+
+function SuccessComponent(){
+    useEffect(()=>{
+        alert('Success Component Will Mount');
+        return(()=>{
+            alert('Success Component will unmount');
+        })
+    },[])
+    return(
+        <div>
+            <h2>Login Success..</h2>
+        </div>
+    )
+}
+
+function ErrorComponent(){
+    useEffect(()=>{
+        alert('Error Component Will Mount');
+        return(()=>{
+            alert('Error Component will unmount');
+        })
+    },[])
+    return(
+        <div>
+            <h2>Invalid Credentials</h2>
+        </div>
+    )
+}
+
+
+                                useContext Hook
+- Context Memory
+ 
+June28:
+- useState
+- useEffect
+- useContext
+
+FAQ: What is Context memory?
+Ans:  It is the memory allocated for a component and accessible to
+        other components that run with in the context of current  
+         component.
+
+FAQ: What is the purpose of Context memory?
+Ans: It enables sharing of data across components configure in multi
+        level hierarchy.
+       A higher component can share its data to lower component.
+       [outer to inner]
+       It also enables to share data across multiple requests of
+       same component.
+
+
+Implementing Context using React Hook
+-------------------------------------------------------
+- Context uses Dependency Injection mechansim.
+- DI is a technique that defines how an object get holds of its dependencies.
+- It is about how it locates and injects the dependencies.
+- DI depends on two components
+
+    a) Provider
+    b) Injector
+
+- Provider is responsible for locating the dependencies in memory.
+            [ stores and locates data ]
+
+- Injector is responsible for injecting the data into component.
+
+- React "useContext"  uses provider and injector
+
+- useContext acts as a "Service"
+
+- Service follows "Single Ton" pattern
+
+- Single Ton pattern creates an instance for first request and uses the same across multiple requests.
+    [only once instance can be defined for a class]
+
+Step-1: You have to create a new context memory for component
+           "React" core library provides a function "createContext()"
+
+Syntax:
+        var contextName = React.createContext(null);
+
+
+Step-2: You have to provide value into context
+
+Syntax:
+           <contextName.Provider  value={any}>
+                    //scope
+                    // all components must be within the context
+                       provider scope
+           </contextName.Provider>
+
+         
+Step-3: You have to inject into any component
+           Inner component have to access the context.
+
+Syntax:
+            const  ref = useContext(contextName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ex:
+import React, {useContext, useState} from "react"
+
+var userDetailsContext = React.createContext(null);
+
+export default function ContextDemo()
+{
+    const [userDetails, setUserDetails] = useState({
+        UserName: '',
+        Email:''
+    })
+
+    function HandleUser(e){
+        setUserDetails({
+            UserName: e.target.value,
+            Email: userDetails.Email
+        })
+    }
+    function HandleEmail(e){
+        setUserDetails({
+            UserName: userDetails.Email,
+            Email: e.target.value
+        })
+    }
+    function HandleSet(){
+        setUserDetails({
+            UserName: userDetails.UserName,
+            Email: userDetails.Email
+        })
+    }
+
+    return(
+        <userDetailsContext.Provider value={userDetails}>
+        <div className="container-fluid">
+                <h1>Site Index - {userDetails.UserName}</h1>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd><input onChange={HandleUser} type="text"/></dd>
+                    <dt>Email</dt>
+                    <dd><input onChange={HandleEmail} type="email"/></dd>
+                </dl>
+                <button onClick={HandleSet}>Set Data</button>
+                <HeaderComponent />
+        </div>
+        </userDetailsContext.Provider>
+       
+    )
+}
+
+function HeaderComponent(){
+    var userdetails = useContext(userDetailsContext);
+    return(
+        <div className="bg-info text-white" style={{height:'150px', padding:'10px'}}>
+            <h2>Home - {userdetails.UserName} </h2>
+            <NavbarComponent />
+        </div>
+    )
+}
+function NavbarComponent() {
+    var userdetails = useContext(userDetailsContext);
+    return(
+        <div className="btn-toolbar bg-dark text-white justify-content-between">
+            <div className="btn-group">
+                <button className="btn btn-dark">Amazon</button>
+            </div>
+            <div className="btn-group">
+                <button className="btn btn-dark">{userdetails.Email}</button>
+            </div>
+        </div>
+    )
+}
+ 
+June29:
+FAQ: When context ends?
+Ans: On Component Unmount.
+
+                                useCookies
+- Cookie is a simple text document.
+- It can store client authentication details.
+    a) Temporary
+    b) Persistent
+- If cookie is temporary then it is called as "In-memory-cookie".
+- It is deleted automatically when browser is closed.
+- If cookie is permanent then it is called as "Persistent-Cookie".
+- It can store in your HDD for a duration of specified time interval.
+- Cookies are used by web application to store client authentication details and use across multiple requests and components until removed.
+- Cookies can be infected with virus.
+- Cookies can be disabled by browser.
+
+FAQ: How a developer known the status of cookies on client browser?
+Ans: By using JavaScript   "navigator" object
+
+            navigator.cookieEnabled  = true / false
+            navigator.appName
+            navigator.plugins[]
+           
+- React allows developers to use various 3rd party cookie libraries
+                "react-cookie"
+
+    > npm install  react-cookie --save
+
+- Cookie is provided as a service by "react-cookie" library
+
+- The provider is
+
+        <CookieProvider>
+
+        </CookieProvider>
+- The components that have to use cookie must be with in the scope of cookie provider.
+
+        <CookieProvider>
+            <YourComponent />
+        </CookieProvider>
+
+- The cookies are created by "useCookies" hook
+- "useCookies" hook is responsible for
+        a) Creating
+        b) Reading
+        c) Removing
+
+Syntax: Configuring Cookie
+       const [cookies, setCookie, removeCookie] = useCookies(['cookiename'])
+
+Syntax: Creating Cookie
+
+        setCookie('cookiename','cookievalue', { cookieOptions });
+
+        Cookie Options:
+        a) path        : It defines the virtual path.  "/"
+        b) expires    : It defines lifespan
+
+Note: If expires is not defined then it is temporary cookie.
+        If expires is defined then it is store in HDD.
+
+        setCookie('cookiename','cookievalue', { path:"/", expires: new Date("2022-07-10 20:22") });
+
+Syntax: Reading Cookie
+
+        cookies.cookieName
+
+Syntax: Check Cookie Availablity
+
+        cookies.cookieName==undefined = true  [not available]
+       
+Syntax: Remove Cookie
+
+        removeCookie('cookiename');
+
+
+
+Ex:
+import { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
+
+export default function UserLogin(){
+    const [cookies, setCookie, removeCookie] = useCookies(['username']);
+    const [userDetails, setUserDetails] = useState({UserName:'', Password:''});
+
+    function handleUserName(e){
+        setUserDetails({
+            UserName: e.target.value,
+            Password: userDetails.Password
+        })
+    }
+    function handlePassword(e){
+        setUserDetails({
+            UserName: userDetails.UserName,
+            Password: e.target.value
+        })
+    }
+    function handleLogin(){
+        setCookie("username",userDetails.UserName,{path:"/", expires:new Date("2022-07-02")});
+        alert("Login Success..");
+    }
+    function handleSignout(){
+        removeCookie("username");
+        alert("Signed out Successfully..");
+    }
+    useEffect(()=>{
+        if(cookies.username==undefined) {
+            alert("Please Login");
+        }
+    },[]);
+
+    return(
+        <div className="container-fluid">
+            <h2>User Login</h2>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input onChange={handleUserName} type="text"/></dd>
+                <dt>Password</dt>
+                <dd><input onChange={handlePassword} type="password"/></dd>
+            </dl>
+            <button onClick={handleLogin}>Login</button>
+            <hr/>
+            <div>
+            <h3>Home  <button onClick={handleSignout} className="btn btn-link">Signout</button> </h3>
+            Hello ! {cookies.username}
+            </div>
+        </div>
+    )
+}
+
+                                  useReducer
+                                  [Redux]
+
+June30:
+useReducer
+- Reducer is used to define a predictable state container for component.
+- It can store data and make it available across requests.
+- Context is similar to reducer but it is not safe.
+- Context stores the data and structure.
+- Reducer hides the structure and provides data.
+- It is safe when compared to context.
+- React 16+ version provides "userReducer" hook to maintain predictable state for component.
+- React "useReducer" comprises of 2 components
+        a) reducer
+        b) dispatcher
+
+Reducer:
+- It defines the actions to perform
+- It defines the data to store
+
+Syntax:
+    function reducer(state, action)
+    {
+           switch(action.type)
+           {
+                 case A: {
+                   return state;
+                }
+                case B: {
+                   return state;
+                }
+           }
+    }
+
+- Reducer predicts the action type and returns relative data.
+- It makes the data available across requests.
+
+Dispatcher:
+- It follows "observer" pattern.
+- It is a communication pattern.
+- It will dispatch the action type and notifies the reducer.
+
+<button  onClick={()=> {type:'A'} }>
+<button  onClick={()=> {type:'B'} }>
+
+Summary:
+- reducer defines actions and stores data.
+- dispatcher configures observer pattern that will dispatch
+  specified action.
+- reducer manages state container at application level.
+
+Step-1: Configure Initial State
+
+        var initialState  = { count: 0 };
+
+Step-2: Configure Reducer
+
+ function reducer(state, action)
+ {
+        switch(action.type)
+        {
+                case 'type1':                
+                    return  state;                
+                case 'type2:
+                    return state;
+                default:
+                    return otherValue;
+        }
+ }
+
+Step-3: Configure useReducer hook for component that will
+           manage the state and actions
+
+           const [state, dispatch] = useReducer(initialState,action)
+
+            <button onClick={()=> dispatch({type:'Like'})}>
+            <button onClick={()=> dispatch({type:'dislike'})}>
+
+Step-4: You can access the state and return data
+   
+            {state.count}
+
+
+FAQ: What is difference between  return  and break?
+Ans:  break terminates the block but still continues execution.
+         return terminates execution.
+
+Ex:
+import { useReducer, useState  } from "react";
+
+var initialState = {count: 0};
+
+function reducer(state, action){
+    switch(action.type)
+    {
+        case 'like':
+        return {count: state.count + 1};
+        case 'dislike':
+        return {count: state.count - 1};
+    }
+}
+
+export default function ReducerDemo(){
+   
+    const [state, disptach] = useReducer(reducer, initialState);
+
+    function handleLikeClick(){
+        disptach({type:'like'});
+    }
+    function handleDislikeClick(){
+        disptach({
+            type:'dislike'
+        })
+    }
+
+    return(
+        <div className="container-fluid">
+            <h2>Likes Counter - {state.count}</h2>
+            <button onClick={handleLikeClick} >Like</button>
+            <button onClick={handleDislikeClick}>Dislike</button>
+        </div>
+    )
+}
+ 
+July1:
+- reducer            : defines actions
+- dispatch        : notifies changes to actions
+
+1. configure initial state
+2. define reducer
+3. dispatch
+
+Ex: useReducer
+
+import { useEffect, useReducer, useState  } from "react";
+
+var initialState = {likes: 0, dislikes: 0};
+
+function reducer(state, action){
+    switch(action.type)
+    {
+        case 'like':
+        return {likes: parseInt(state.likes) + 1, dislikes: state.dislikes};
+        case 'dislike':
+        return {dislikes: parseInt(state.dislikes) + 1, likes: state.likes};
+    }
+}
+
+export default function ReducerDemo(){
+   
+
+    const [state, disptach] = useReducer(reducer, initialState);
+    const [product, setProduct] = useState({});
+
+    useEffect(()=>{
+        fetch("http://fakestoreapi.com/products/2&quot;)
+        .then(response=>response.json())
+        .then(data=>{
+           
+            setProduct(data);
+        })
+    },[])
+
+
+    function handleLikeClick(){
+        disptach({type:'like'});
+    }
+    function handleDislikeClick(){
+        disptach({
+            type:'dislike'
+        })
+    }
+
+    return(
+        <div className="container-fluid">
+            <h2>Product Details</h2>
+            <div className="card p-2" style={{width:'300px'}}>
+                <img src={product.image} className="card-img-top" height="160"/>
+                <div className="card-header">
+                    <p>{product.title}</p>
+                </div>
+                <div className="card-footer">
+                [{state.likes}] <button className="btn btn-primary" onClick={handleLikeClick} > <span className="bi bi-hand-thumbs-up"></span> </button>
+                [{state.dislikes}] <button className="btn btn-danger" onClick={handleDislikeClick}> <span className="bi bi-hand-thumbs-down"></span> </button>
+                </div>
+            </div>
+           
+        </div>
+    )
+}
+
+                               Custom Hooks
+- Creating a custom Hook is creating a new service.
+- Service is a pre-define business logic which you can implement and customize according to your requirements.
+
+Basic Rules
+- Custom hook must be a function.
+- It must return a value
+- hook can't be void type.
+- Make sure that function handles exception.
+- It returns exception.
+
+Ex:
+1. Create a new folder "hooks"
+2. Add a new file
+        "useFetchData.js"
+
+import { useState, useEffect } from "react";
+
+export function useFetchData(url)
+{
+    const [data, setData] = useState();
+
+    useEffect(()=>{
+        fetch(url)
+        .then(response=>response.json())
+        .then(data=> {
+            setData(data);
+        })
+        .catch((ex)=>{console.error(ex)});
+    },[url])
+    return {data}
+}
+
+3. Import hook into any component
+
+import { useFetchData } from "../hooks/useFetchData"
+
+export default function CustomHookDemo()
+{
+    const [data] = useFetchData("http://fakestoreapi.com/products&quot;);
+
+    return(
+        <div className="container-fluid">
+            <h2>Products</h2>
+            <ol>
+                {
+                    data.data.map(product=>
+                        <li>{product.title}</li>
+                        )
+                }
+            </ol>
+        </div>
+    )
+}
+
+
+
+Ex: Captcha
+
+useCaptcha.js
+
+
+import { useState, useEffect } from "react";
+
+export function useCaptcha(){
+    var [code, setCode] = useState(0);
+    useEffect(()=>{
+         var a = Math.random() * 10;
+         var b = Math.random() * 10;
+         var c = Math.random() * 10;
+         var d = Math.random() * 10;
+         var e = Math.random() * 10;
+         var f = Math.random() * 10;
+         setCode(`${Math.round(a)} ${Math.round(b)} ${Math.round(c)} ${Math.round(d)} ${Math.round(e)} ${Math.round(f)}`)
+    },[])
+    return {code};
+}
+
+UserLogin.js
+
+import { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
+import { useCaptcha } from "../hooks/useCaptcha";
+
+
+
+export default function UserLogin(){
+    const [cookies, setCookie, removeCookie] = useCookies(['username']);
+    const [userDetails, setUserDetails] = useState({UserName:'', Password:''});
+   
+    const code = useCaptcha();
+
+    function handleUserName(e){
+        setUserDetails({
+            UserName: e.target.value,
+            Password: userDetails.Password
+        })
+    }
+    function handlePassword(e){
+        setUserDetails({
+            UserName: userDetails.UserName,
+            Password: e.target.value
+        })
+    }
+    function handleLogin(){
+        setCookie("username",userDetails.UserName,{path:"/", expires:new Date("2022-07-02")});
+        alert("Login Success..");
+    }
+    function handleSignout(){
+        removeCookie("username");
+        alert("Signed out Successfully..");
+    }
+    useEffect(()=>{
+        if(cookies.username==undefined) {
+            alert("Please Login");
+           
+        }
+    },[]);
+
+    function handleCode(){
+       
+    }
+
+    return(
+        <div className="container-fluid">
+            <h2>User Login</h2>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input onChange={handleUserName} type="text"/></dd>
+                <dt>Password</dt>
+                <dd><input onChange={handlePassword} type="password"/></dd>
+                <dt>Verify Code <button>New Code</button> </dt>
+                <dd>{code.code}</dd>
+            </dl>
+            <button onClick={handleLogin}>Login</button>
+            <hr/>
+            <div>
+            <h3>Home  <button onClick={handleSignout} className="btn btn-link">Signout</button> </h3>
+            Hello ! {cookies.username}
+            </div>
+        </div>
+    )
+}
+
+Ex: Create a Custom Hook for sorting data
+
+
+ ["A", "D", "C", "E", "B"]
+
+    useSort(data)
+
+Ex: Create a Hook for to convert text into Sentence case.
+
+        wElcOME to HtML => Weclome to html
+
+
+                             Ajax Call for API
+                            Routing
+
+July2:
+Working with API's in React
+
+What is the role of React Developer?
+Building effective User Interfaces
+
+What are responsibilities?
+- Designing Reusable Components
+- Designing Services
+- Consuming Services
+- Communication with API
+- Form Validations
+- Configuring Forms for various Modules
+- Implementing Routing
+- Handling Security Issues in Application
+        Cross Site Scripting Attacks [XSS]
+        Request Forgery
+        Injection Attacks
+        CORS
+
+                                     API's
+
+1. What is Distributed Computing Architecture?
+- Two applications running or 2 different mechines can share information.
+- Two applications running or same mechine in 2 different process can share information.
+
+2. What are the popular distributed computing technologies?
+- CORBA
+- DCOM
+- RMI
+- EJB
+- Web Services
+- Remoting
+
+3. Communication Specifications
+- SOAP
+- REST
+- JSON
+
+4. API uses distributed computing architecture
+    API comprises of
+        a) Service Consumer
+        b) Service Provider
+    API communication is managed in 3 ways
+        SOAP
+        REST
+        JSON
+
+SOAP
+- Service Oriented Architecture Protocol
+- Consumer will make an XML request
+- Provider will send an XML response
+
+Ex:
+    Request:
+        <Product>
+                <Id>2</Id>
+        </Product>
+
+    Response:
+        <Product>
+           <Id>2</Id>
+           <Name>TV</Name>
+           <Price> 45000 </Price>
+        </Product>
+
+REST[full]
+- Representational State Transfer
+- Consumer will make Query request
+- Provider will respond with XML and optionally JSON.
+
+Request:
+      http://fakestoreapi.com/products?id=2
+
+Response
+        <Product>
+           <Id>2</Id>
+           <Name>TV</Name>
+           <Price> 45000 </Price>
+        </Product>
+
+JSON:
+- JavaScript Object Notation
+- Consumer make JSON request
+- Provider will response with JSON
+
+Request:
+    {
+     "Id" : 2
+    }
+
+Response
+    {
+     "Id":2,
+    "Name":"TV",
+    "Price":45000
+    }
+
+Design End Point
+- Provider
+        MongoDB         Database
+        Node.js            Server
+        Express            API
+       
+- Consumer
+        React                 UI
+        - fetch()
+        - $.ajax()
+        - axios
+        - whatwg-fetch
+
+
+                                 MongoDB Database
+                                -----------------------------
+1. Download and Install MongoDB Database Server on your PC
+
+    https://www.mongodb.com/try/download/community
+
+Note: Make sure that you selected "MongoDB Compass", which is
+        a GUI tool for working with database.
+
+2. Open MongoDB Compass
+
+3. Connect with MongoDB Server using
+
+        "mongodb://127.0.0.1:27017"
+
+     Oracle, MySql                    MongoDB
+     Database                        Database
+     Table                            Collection
+     Records                            Documents
+     Fields                            Fields
+     Joins                                Embedded Documents
+                                        [JSON]
+
+4. Create a new Database
+
+        database name        : reactdb
+        collection name        : tblusers
+
+5. Insert document into table [collection] => Add Data => Insert Document
+
+   {
+  "UserId":"john_nit",
+  "UserName": "john",
+  "Password": "john@11",
+  "Age":22,
+  "Mobile": "+919876543210",
+  "Subscribed":true  
+}
+
+                            Server Side API
+                        [Node.js and Express]
+
+GET            /getusers                    
+GET            /getusers/userid
+POST            /registeruser
+
+    http://localhost:port/getusers
+July4:
+- Distributed Computing
+- Technologies
+- Web Service and Web API
+- SOAP, REST, JSON
+- Database in MongoDB
+
+
+                            MongoDB Queries
+1. Reading
+    find({query})
+   
+Syntax:
+    db.collection.find({})
+    select * from tbl
+
+    db.collection.find({id:1})
+
+    {$gt: { }}            greater than
+    {$lt : { }}            lessthan
+    {$gte: { }}
+    {$lte: { }}
+    {$ne: { }}
+
+2. Inserting
+    insertOne()
+    insertMany()
+
+Syntax
+    db.collection.insertOne({field:value,..})
+    db.collection.insertMany([{},{}])
+
+3. Update
+    updateOne()
+    updateMany()
+   
+Syntax:
+    db.collection.updateOne({findQuery},{update Query});
+
+     $set
+    $rename
+    $unset
+
+    db.collection.updateOne({id:2},{$set:{price:400}});
+
+4. Delete
+    deleteOne()
+    deleteMany()
+
+Syntax:
+    db.collection.deleteOne({findQuery});
+    db.collection.deleteOne({id:2});
+
+
+                            Design Server Side API
+- Node.js
+- Express
+
+1. To configure API requests server side you need following libraries
+
+    >npm install express            [ middleware framework ]
+    >npm install mongodb        [ database drivers ]
+    >npm install cors                [ cross origin resource sharing]
+
+Note: Nodejs server side programs are written in JavaScript file
+                            program.js
+         Node js program are compile by using V8 compiler
+               
+                            >node program.js
+
+2. Create a new Nodejs program
+                    "api.js"
+
+var express = require("express");
+var cors = require("cors");
+var mongoClient = require("mongodb").MongoClient;
+
+var connectionString = "mongodb://127.0.0.1:27017";
+
+var app = express();
+app.use(cors());
+app.use(express.urlencoded({
+    extended:true
+}));
+app.use(express.json());
+
+app.get("/getusers", (req, res)=>{
+    mongoClient.connect(connectionString,(err, clientObj)=>{
+        if(!err){
+            var database = clientObj.db("reactdb");
+            database.collection("tblusers").find({}).toArray((err, documents)=>{
+                if(!err) {
+                    res.send(documents);
+                }
+            })
+        }
+    })
+});
+
+app.post("/registeruser",(req, res)=>{
+    var userdetails = {
+        UserId: req.body.UserId,
+        UserName: req.body.UserName,
+        Password: req.body.Password,
+        Age: parseInt(req.body.Age),
+        Mobile: req.body.Mobile,
+        Subscribed:(req.body.Subscribed=="true")?true:false
+    }
+    mongoClient.connect(connectionString,(err, clientObj)=>{
+        if(!err){
+            var database = clientObj.db("reactdb");
+            database.collection("tblusers").insertOne(userdetails,(err, result)=>{
+                if(!err){
+                    console.log("Record Inserted");
+                    res.redirect("/getusers");
+                }
+            })
+        }
+    })
+})
+
+app.listen(4000);
+console.log("Server Started : http://127.0.0.1:4000&quot;);
+
+
+> node api.js
+
+   http://localhost:4000/getusers        GET
+   http://localhost:4000/registeruser    POST
+
+
+July5:
+Database     - MongoDB
+API              - Node, Express
+Front end    - React
+
+                         React API Requests
+
+FAQ: Which object manages Ajax requests in JavaScript based applications?
+Ans:  XmlHttpRequest  object
+
+- React can use JavaScript HttpRequest methods and promise
+    "fetch()"
+- Fetch
+    * It returns data in binary format
+    * Response is in binary, which is converted into JSON.
+    * It need explicit XMLHttpRequest object to monitor the errors.
+
+- React can use various 3rd party libraries to interact with API
+    a) jQuery Ajax
+    b) Axios
+    c) Whatwg-Fetch etc..
+
+
+                         jQuery Ajax with React
+
+- JQuery Ajax returns data in JSON
+- Advanced error handling methods
+- Handle all requests like GET, POST, PUT, DELETE etc..
+- CORS issues
+- Injection issues
+- XSS
+- Request Forgery
+ 
+API Requests
+GET            http://localhost:4000/getusers
+POST            http://localhost:4000/registeruser
+
+1. Install jQuery library for React project
+
+        >npm install jquery --save
+
+2. Import jQuery library into component
+
+        import   $  from  'jquery';
+
+3. Access jQuery Ajax methods
+
+        $.ajax({ajaxOptions})
+
+        method        : request method GET / POST
+        url                : API url
+        success        : Callback function on success
+        error            : Callback function on error
+
+Syntax:
+        $.ajax({
+            method: "GET | POST",
+            url: "API_URL",
+            success: function(response){
+                // response data is JSON | HTML
+            },
+            error: function(xhr) {
+                // xhr.statusCode, statusText, headers
+            }
+        })
+       
+Ex: Start your API
+    > node api.js
+
+JQueryAjaxDemo.js
+
+
+import { useState, useEffect } from "react";
+import $ from 'jquery';
+
+export default function JQueryAjaxDemo()
+{
+    const [users, setUsers] = useState([]);
+
+    useEffect(()=>{
+        $.ajax({
+            method: "GET",
+            url: "http://localhost:4000/getusers&quot;,
+            success: function(response){
+                setUsers(response);
+            }
+        })
+    },[])
+
+    return(
+        <div className="container-fluid">
+            <h2>User Details</h2>
+            <ol>
+                {
+                    users.map(user=>
+                        <li key={user.UserId}>{user.UserId}</li>
+                        )
+                }
+            </ol>
+        </div>
+    )
+}
+
+Ex: Register and Verify User ID
+
+JQueryAjaxDemo.js
+
+import { useState, useEffect } from "react";
+import $ from 'jquery';
+import { useFormik } from "formik";
+
+export default function JQueryAjaxDemo()
+{
+    const [users, setUsers] = useState([]);
+    const [userError, setUserError] = useState('');
+
+    const formik = useFormik({
+        initialValues : {
+            UserId:'',
+            UserName:'',
+            Password:'',
+            Age:0,
+            Mobile:'',
+            Subscribed:true,
+        },
+        onSubmit: values => {
+            $.ajax({
+                method: "POST",
+                url: "http://localhost:4000/registeruser&quot;,
+                data: values
+            })
+            alert("Registered Successfully..");
+        }
+    })
+
+    useEffect(()=>{
+        $.ajax({
+            method: "GET",
+            url: "http://localhost:4000/getusers&quot;,
+            success: function(response){
+                setUsers(response);
+            }
+        })
+    },[])
+
+    function VerifyUserId(e){
+        for(var user of users)
+        {
+            if(user.UserId==e.target.value) {
+                setUserError('User ID Taken - Try Another');
+                break;
+            } else {
+                setUserError('User ID Available');
+            }
+        }
+    }
+
+    return(
+        <div className="container-fluid">
+            <h2>Register User</h2>
+            <form onSubmit={formik.handleSubmit}>
+                <dl>
+                    <dt>User Id</dt>
+                    <dd><input type="text" onKeyUp={VerifyUserId}  value={formik.values.UserId} onChange={formik.handleChange} name="UserId" /></dd>
+                    <dd>{userError}</dd>
+                    <dt>User Name</dt>
+                    <dd><input type="text" value={formik.values.UserName} onChange={formik.handleChange} name="UserName"/></dd>
+                    <dt>Password</dt>
+                    <dd><input type="password" value={formik.values.Password} onChange={formik.handleChange} name="Password"/></dd>
+                    <dt>Age</dt>
+                    <dd><input type="number" value={formik.values.Age} onChange={formik.handleChange} name="Age"/></dd>
+                    <dt>Mobile</dt>
+                    <dd><input type="text" value={formik.values.Mobile} onChange={formik.handleChange} name="Mobile"/></dd>
+                    <dt>Subscription</dt>
+                    <dd className="form-switch"><input className="form-check-input" type="checkbox" checked={formik.values.Subscribed} onChange={formik.handleChange}  name="Subscribed"/> Yes </dd>
+                </dl>
+                <button className="btn btn-primary">Register</button>
+            </form>
+        </div>
+    )
+}
+
+ 
+July6:
+$.ajax()
+$.getJSON()
+$.ajaxStart()
+$.ajaxEnd()
+$.ajaxComplete()
+$.ajaxSuccess()
+$.ajaxError()
+
+                                        Axios
+- It returns data in JSON
+- Handles CORS
+- More secured, Prevents XSS, Request Forgery etc.
+- Handle multiple requests
+- Better Error Tracking
+
+Syntax:  Promise
+    axios({
+          method: "GET | POST",
+        url: "API_Url",
+        data: "data_to_post"
+     }).then(callback on success)
+      .catch(callback on failure)
+      .finally(callback everytime)
+
+Syntax:
+    axios.get("url").then().catch().finally()
+   
+Syntax:
+    axios({
+         [
+           { method, url, }                       - [0]
+           { method, url, }                    - [1]
+         ]
+     })
+
+
+- Axios response object comprises of various response details like
+
+            statusCode            200, 404, 302
+            statusText            OK, Not found, method
+            headers                Content-Type, MIME Type, Request Type
+            data                    Data present in requested URL
+
+- Axios post
+
+    axios.post("url", data);
+
+    axios({
+         method: "POST",
+        url: "http://localhost:4000/register/user&quot;,
+        data: values
+    })
+
+Install axios library:
+
+> npm install axios --save
+
+Ex: AxiosDemo.js
+
+import axios from "axios";
+import { useState, useEffect } from "react";
+
+export default function AxiosDemo()
+{
+    const [users, setUsers] = useState([]);
+
+    useEffect(()=>{
+        axios.get("http://localhost:4000/getusers&quot;)
+        .then(function(response){
+            setUsers(response.data);
+        }).catch(function(ex){
+            console.log(ex);
+        })
+    },[])
+
+    return(
+        <div className="container-fluid">
+            <h2>Users</h2>
+            <ol>
+                {
+                    users.map(user=>
+                        <li key={user.UserId}>{user.UserId}</li>
+                        )
+                }
+            </ol>
+        </div>
+    )
+}
+
+                              React Routing
+- Web Application uses various types of objects and techniques.
+- Regular objects in Web Development
+        1. Request
+        2. Response
+        3. Session
+        4. Application
+        5. Cookie etc..
+- Regular techniques in Web Development
+        1. Caching
+        2. Model Binding
+        3. Data Binding
+        4. Event Binding
+        5. Style Binding
+        6. Class Binding
+        7. Routing etc..
+- Routing is a technique used in modern web applications to configure USER and SEO friendly URL's.
+
+- User Friendly URL allows the user to query any content directly from url.
+
+Without Routing:
+ http://www.amazon.in/electronics.aspx?category=mobiles&model=samsung
+
+With Routing:
+ http://www.amazon.in/electronics/mobiles/samsung
+
+- SEO friendly url allows search engines to identify the exact location in page. It is mostly required for Analytics.
+
+- Routing implicitly uses Ajax
+- It can load new details into page without reloading the page.
+- User can stay of one page and can get access to everything onto the page. [SPA]
+- React uses  "react-router-dom"  library for building SPA.
+- It is a routing library for react.
+- React 18 uses  routing library version "V6".
+- React upto 18 routing library version "V5".
+
+Install React Router Library
+
+> npm install react-router-dom  --save
+> npm install react-router-dom@v5 --save
+
+July7:
+React Routing
+- Routing Versions    
+    V5
+    V6
+- React 18 is using V6
+- Library for routing "react-router-dom"
+
+                        Basic Routing Components
+                        -------------------------------------
+1. BrowserRouter: It transcompiles the virtual route into actual browser
+                        route.
+
+    import { BrowserRouter as Router } from 'react-router-dom';
+
+    <Router>
+            ... your routes...
+    </Router>
+    [aliasing]
+                                    (or)
+
+    import { BrowserRouter } from 'react-router-dom';
+
+    <BrowserRouter>
+           ...your routes...
+    </BrowserRouter
+
+FAQ: Which browser object of JavaScript can handle navigation?
+Ans:  location object
+        [location.href]
+
+FAQ: How to we can add a new page into current browsing history?
+Ans:  "history" object
+
+
+2. Routes    : It is a collection of routes defined for application.
+                  It creates a Routing Table.
+
+Syntax:
+        <BrowserRouter>
+            <Routes>
+                  ...your routes...
+            </Routes>
+        </BrowserRouter>
+
+3. Route        : It is used to configure a route.
+                  Every route is an object with set of properties.
+
+                 {
+                   exact,
+                   index,
+                   path,
+                   element
+                 }
+
+Syntax:
+       <Route  path=""  element={ }  index  exact> </Route>
+Ex:
+ <BrowserRouter>
+    <Routes>
+        <Route path="" ... />
+       <Route path="" .../>
+    </Routes>
+ </BrowserRouter>
+
+- Route can have collection of child routes
+
+ <Routes>
+   <Route path="" element={}>
+        <Route path="" element={} />
+        <Route path="" element={} />
+   </Route>
+</Routes>
+
+- Route can also have route parameters
+
+ <Route path=""  element={}>
+         <Route path=":params" element={} />
+ </Route>
+
+- Route can also have search parameters
+ 
+ <Route path=""  element={}>
+       <Route path=":param?key=value&key=value"  element={}/>
+ </Route>
+
+ [Mostly used in Ad-hoc querying]  
+
+4. Link        : It generates a router link.
+                  It navigates to specific path configured in route table.
+
+Syntax:
+    <Link  to="routePath"> Text | Image </Link>
+
+5. Outlet        : It configures the target location where the resulting
+                  markup must be rendered.
+
+Syntax:
+        <Main>
+        <Outlet />
+        </Main>
+
+Summary
+1. BrowserRouter
+2. Routes
+3. Route
+4. Link
+5. Outlet
+
+
+
+- Route Can Use Markup Directly from Element
+  [It can render markup directly as result]
+
+Syntax:
+    <Route  path="refName"  element={<div>your content</div>} />
+
+- If user is not requesting any specific path then you can define default content to render.
+
+Syntax:
+    <Route  path="/"  element={ default content to render } />
+
+
+- If user is requesting a path and it is not available in application then you can render wild card route.
+
+Syntax:
+    <Route  path="*"  element={content to render if reuqested is not found} />
+
+
+Ex:
+SPAComponent.js
+
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+
+export default function SPAComponent()
+{
+
+    return(
+        <div className="container-fluid">
+            <BrowserRouter>
+                <nav>
+                    <ul>
+                        <li> <Link to="/html">HTML</Link> </li>
+                        <li> <Link to="/css">CSS</Link> </li>
+                        <li> <Link to="/js">JavaScript</Link> </li>
+                    </ul>
+                </nav>
+                <hr />
+                <Routes>
+                    <Route path="html" element={
+                    <main>
+                        <h2>HTML</h2>
+                        <p>It is a markup language.</p>
+                    </main>
+                    } />
+
+                    <Route path="css" element={
+                    <main>
+                        <h2>CSS</h2>
+                        <p>It defines styles.</p>
+                    </main>
+                    } />
+
+                    <Route path="js" element={
+                    <main>
+                        <h2>JavaScript</h2>
+                        <p>It is a language.</p>
+                    </main>
+                    } />
+
+                    <Route  path="/" element={
+                        <main>
+                            <h2>Home</h2>
+                            <p>Tutorial Home</p>
+                        </main>
+                    } />
+
+                    <Route path="*" element={
+                        <main>
+                            <code>Not Found : Page you requested  Not found</code>
+                        </main>
+                    } />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    )
+}
+
+
+- You can render content from any component instead of using direct markup.
+
+Ex:
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+
+function HTML(){
+    return(
+        <>
+        <main>
+            <h2>HTML</h2>
+            <p>It is a markup language.</p>
+        </main>
+        </>
+    )
+}
+function CSS(){
+    return(
+        <>
+         <main>
+            <h2>CSS</h2>
+            <p>It defines styles.</p>
+        </main>
+        </>
+    )
+}
+
+
+export default function SPAComponent()
+{
+
+    return(
+        <div className="container-fluid">
+            <BrowserRouter>
+                <nav>
+                    <ul>
+                        <li> <Link to="/html">HTML</Link> </li>
+                        <li> <Link to="/css">CSS</Link> </li>
+                        <li> <Link to="/js">JavaScript</Link> </li>
+                    </ul>
+                </nav>
+                <hr />
+                <Routes>
+                    <Route path="html" element={
+                       <HTML />
+                    } />
+
+                    <Route path="css" element={
+                      <CSS />
+                    } />
+
+                    <Route path="js" element={
+                    <main>
+                        <h2>JavaScript</h2>
+                        <p>It is a language.</p>
+                    </main>
+                    } />
+
+                    <Route  path="/" element={
+                        <main>
+                            <h2>Home</h2>
+                            <p>Tutorial Home</p>
+                        </main>
+                    } />
+
+                    <Route path="*" element={
+                        <main>
+                            <code>Not Found : Page you requested  Not found</code>
+                        </main>
+                    } />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    )
+}
+
+July8:
+FAQ: How to navigate to any specific path dynamically?
+Ans:  By using "useHistory()" or "useNavigate()"
+
+Syntax:
+        import {  useNavigate }  from  "react-router-dom";
+
+        let navigate = useNavigate();
+
+        navigate("path", { options });
+July11:
+Route Parameters
+- Parameter allow to query any content directly from URL.
+- Parameter is also used to transport data from one component to another.
+
+Step:1  => Configure route path that can accept parameters
+
+            <Route  path="Name/:Param1/:Param2" element={ } />
+
+Step:2 =>  Route parameters are passed with actual values from URL
+
+             Url :     Name/value1/value2
+
+Step:3 =>  Access route parameters using  "useParams()" router hook.
+
+              let  ref  = useParams();        // Object with Key and value
+              ref.Param1                            Param1 : Value1
+              ref.Param2                            Param2 : Value2
+
+
+Server Side API Parameter in Node.js
+---------------------------------------------------
+
+1. Define parameter
+       
+        app.get("path/:param", (req, res)=> { })
+
+2. Access Parameter
+
+        req.params.paramName
+
+
+Ex: Api.js
+
+var express = require("express");
+var cors = require("cors");
+var mongoClient = require("mongodb").MongoClient;
+
+var connectionString = "mongodb://127.0.0.1:27017";
+
+var app = express();
+app.use(cors());
+app.use(express.urlencoded({
+    extended:true
+}));
+app.use(express.json());
+
+app.get("/getusers", (req, res)=>{
+    mongoClient.connect(connectionString,(err, clientObj)=>{
+        if(!err){
+            var database = clientObj.db("reactdb");
+            database.collection("tblusers").find({}).toArray((err, documents)=>{
+                if(!err) {
+                    res.send(documents);
+                }
+            })
+        }
+    })
+});
+
+app.post("/registeruser",(req, res)=>{
+    var userdetails = {
+        UserId: req.body.UserId,
+        UserName: req.body.UserName,
+        Password: req.body.Password,
+        Age: parseInt(req.body.Age),
+        Mobile: req.body.Mobile,
+        Subscribed:(req.body.Subscribed=="true")?true:false
+    }
+    mongoClient.connect(connectionString,(err, clientObj)=>{
+        if(!err){
+            var database = clientObj.db("reactdb");
+            database.collection("tblusers").insertOne(userdetails,(err, result)=>{
+                if(!err){
+                    console.log("Record Inserted");
+                    res.redirect("/getusers");
+                }
+            })
+        }
+    })
+});
+
+app.get("/getproducts", (req, res)=> {
+    mongoClient.connect(connectionString, (err, clientObj)=> {
+        if(!err) {
+            var database = clientObj.db("reactdb");
+            database.collection("tblproducts").find({}).toArray((err,documents)=>{
+                if(!err) {
+                    res.send(documents);
+                }
+            })
+        }
+    })
+});
+app.get("/getcategories", (req, res)=> {
+    mongoClient.connect(connectionString, (err, clientObj)=> {
+        if(!err) {
+            var database = clientObj.db("reactdb");
+            database.collection("tblcategories").find({}).toArray((err,documents)=>{
+                if(!err) {
+                    res.send(documents);
+                }
+            })
+        }
+    })
+});
+
+app.get("/getproduct/:id", (req, res)=> {
+    let productId = parseInt(req.params.id);
+
+    mongoClient.connect(connectionString, (err, clientObj)=> {
+        if(!err) {
+            var database = clientObj.db("reactdb");
+            database.collection("tblproducts").find({id:productId}).toArray((err,documents)=>{
+                if(!err) {
+                    res.send(documents);
+                }
+            })
+        }
+    })
+});
+
+
+
+app.listen(4000);
+console.log("Server Started : http://127.0.0.1:4000&quot;);
+
+
+API Methods
+---------------------------------------------------
+/getusers                        GET
+/getproducts                GET
+/getcategories                GET
+/getproduct/1                GET
+/registeruser                POST
+
+July12:
+Nested Routes
+- In a module system we can configure nested routes.
+- Every module can have individual routes.
+
+Syntax:
+    <Route  path="/personal"  element={ }>
+        <Route path="/login" element={<Login />} />
+         <Route path="/register" element={<Register />} />
+     </Route>
+     <Route  path="/nri"  element={ }>
+        <Route path="/login" element={<Login />} />
+         <Route path="/register" element={<Register />} />
+     </Route>
+
+- Nested Route are also used for configuring route parameters
+
+     <Route  path="/products"   element={<Products />}>
+           <Route path=":id"   element={<Details />} />
+     </Route>
+
+                               (or)
+
+     <Route path="/products/:id"  element={<Details />} />
+
+
+- The routes resulting marking is rendered at any specified location using an Outlet.
+
+    import  { Outlet }  from 'react-router-dom';
+
+    <Link to="/path"> Click </Link>
+    <Outlet />
+
+Note:  "/path"  it will replace the complete existing path with current
+                        /login
+            http://localhost:3000/personal/login        / remove existing
+            http://localhost:3000/login
+
+        "path" it will add to existing
+
+                personal/login
+
+
+FAQ: Can we define multiple outlets in a component?
+Ans: Yes. But not recommended
+
+Ex:
+
+Route Hooks
+
+July13:
+Route Hooks
+- useParams()
+        - Access route Parameters
+- useSearchParams()
+        - Access query string
+- useNavigate()
+        -Dynamically navigating to any specified URL.
+- useLocation()
+        -Provides access to location object of DOM.
+        -It can return, href, pathname etc..
+- useHistory()
+        -It can access the browser history
+        -push any content into history.
+
+        let history = useHistory()
+        history.push("/path");
+                             
+Route Cycle
+1. BrowserRouter
+    - Map the virutal route to the actual DOM
+2. Configure Route Table <Routes>
+    - Creating Routes collection
+3. Configure Route  <Route>
+4. Configure request and response
+    - path            : defines request
+    - element    : defines response
+5. Configure Outlet
+
+Authenticate Routes
+- React will not provide any pre-defined service for route authentication
+- You have to explicitly implement by using techniques like
+        a) State
+        b) Cookies
+        c) Redux
+
+                                    TypeScript
+                                    --------------
+What are the issues with JavaScript?
+- It is not implicitly strictly typed. It needs strict more to turn ON.
+                "use strict";
+- It is not strongly typed.
+        var x = 0;    // number
+        x = "A";        // string
+        x = true;        // boolean
+- It is not an OOP language. It supports only few feature of OOP.
+- Code level security issues.
+- Extensibility Issues.
+                    [no interface, abstract class, access modifiers]
+
+Solution:
+- TypeScript
+- Introduced by "Anders Hejlberg" of Microsoft in 2003
+- He developed a language for Microsoft "C#" and TypeScript
+- Google started a language called "atScript" to replace JavaScript.
+- Google started using TypeScript with Angular.
+- React started using TypeScript.
+
+Features of TypeScirpt
+- TypeScript is strictly typed
+- Strongly Typed
+- It is an OOP lanugage.
+- TypeScript is built with TypeScript
+- TypeScirpt supports all low level features
+- It can directly interact with hardware services
+- It is faster
+- Light weight
+- Individually can build large scale applications.
+
+July14:
+TypeScript
+Language Basics
+1. Variables
+2. Data Types
+3. Operators
+4. Statements
+5. Functions
+
+Install TypeScript on your PC
+C:\>npm install -g typescript
+C:\>tsc -v
+
+                        TypeScript Architecture
+
+1. TypeScript Core Compiler
+    - Check for keywords
+    - Check for Syntax
+    - Check for DataTypes
+    - Check Conversion
+    - Check Input and Output
+    - Code Block
+    - Entry Point
+
+    core.ts                verifying keywords
+    program.ts            entry point
+    scanner.ts            input
+    emitter.ts                output
+    checker.ts            datatype
+    parser.ts                convert
+
+2. Standalone Compiler [tsc.ts]
+    It is a transcompiler that compiles the typescript code into javascript.
+
+          > tsc  program.ts        => program.js
+
+3. Language Service [service.ts]
+    It provides the functions and values required for typescript.
+    It configures the library required for typescript.
+    It is unmanaged code.
+    It is not platform independent.
+
+4. Shims.ts [VS Shim]
+    It makes Typescirpt program platform independent.
+   
+5. Managed Language Service
+    It is the library that runs on every operating system.
+
+6. TsServer [server.ts]
+    - hosting
+    - request and response
+    - TS Server host the TS program, compiles, request and response.
+
+7. Editors [tsconfig.json]
+    - It configures the rules of typescript in any project
+    - Module System
+    - JavaScript version
+               
+           
+Setup Empty Project for TypeScript
+------------------------------------------------
+1. Create a folder
+        D:\react-typescript
+
+2. Open in VS Code
+
+3. Run the following command in terminal
+
+    >npm init  -y                [package.json]
+    >tsc -init                    [tsconfig.json]      [tslint.json] [jslint]
+
+
+4. Add folders
+    - public
+    - src
+
+
+                        TypeScript Language Basics
+
+1. Variables : Everything same as JavaScript.
+                  var, let, const
+                  Variables are strongly typed.
+   
+Syntax:
+           let  variableName:dataType;
+           let   variableName;                    // type is "any"
+
+                  TypeScript supports type inference. It is only based on
+                   intialization not assignment.
+
+Syntax:
+            let username = "John";
+            username = 45000;            // invalid - username is string
+
+            let username;                    // any type
+            username="John";                // valid
+            username=56000;                // valid
+
+2. Data Type     : All same as JavaScript types
+                        a) Primitive Types
+                            number, string, boolean, null, undefined
+                        b) Non Primitive Types
+                            array, object, map
+
+Syntax:
+          let Name:string;
+          let Price:number;
+           let Stock:boolean;
+           let Qty:        = prompt();        string or null
+
+- TypeScript supports union of types
+   
+          let  qty:string|null  = prompt();
+          let  value:string|number|boolean;
+
+          let value:boolean  = confirm();    
+
+- Type of Array
+    Array is used to reduce overhead and complexity.
+    Array can reduce overhead by storing values in sequential order.
+    Array can reduce complexity by storing multiple values under on reference.
+    Array can store various types of values.
+
+July15:
+Language Basics
+- Variables
+- DataTypes
+                            Array Types
+- TypeScript array can be configured to store various types of values or similar type
+
+        let categories:string[] = [ ];
+        let products:string[] = new Array();
+
+        let values:any[] = [ ];
+
+FAQ: What is difference between [ ] and Array()?
+Ans: Array() will not allow various types of values to initialize even when the type is "any".
+        The data type of values is determined according to first value.
+
+       "[]" allows various types of values if data type is "any".
+
+
+FAQ: What is a Tuple?
+Ans:  It refers to an array that can handle various types of values.
+
+Syntax:
+          let  values:any[] = [ ];
+
+- TypeScript supports union of types for array.
+
+Syntax:
+let collection:string[]|number[] = []
+
+- All array methods are same as in JavaScript
+   
+Reading:
+toString(), join(), slice(), find(), filter()
+Insert:
+push(), unshift(), splice()
+Remove:
+pop(), shift(), splice()
+Sorting:
+sort(), reverse()
+Others:
+ indexOf(), lastIndexOf(), length
+
+                                   Object Type
+                                  -----------------
+- There is no specific data type for object.
+- "any" is used for object.
+
+let product:any = {
+    "Name":"TV",
+    "Price": 45000.44,
+    "Stock": true,
+    "Cities": [],
+    "Rating": {},
+    "Total": function() { }
+}
+
+- All object related manipulations are same as in JavaScript
+- Array of Objects also used with "any" type.
+
+    let products:any[] = [ { }, { }, { } ];
+
+                                Map Type
+                                --------------
+- "any" is used for Map().
+- Map is a collection of key and values.
+
+FAQ: What is difference between Map and Object?
+Ans:
+        Object                            Map
+        --------------------------------------------------------------------
+        Keys are string                    Keys are any type
+
+        Values is any type                Value is any type
+
+        Needs explicit iterators        Implicit Iterators
+        for reading keys/values        keys(), values(), entries()
+        [for..in]
+
+        Slow                                Fast
+
+        Needs explicity operators    Provides implicit methods
+        to find and remove keys        [has(), delete(), clear()]
+        [delete, in]
+
+        No size for keys                Keys can configure size
+                                            [size]
+
+Ex:
+let obj:any = new Map();
+obj.set(1, "");
+obj.set("A", 45000);
+obj.delete(1);
+obj.has("A"); //true-false
+obj.size;
+obj.get("A");
+
+                                Date Type
+                                --------------
+- "any" is used for date and time.
+
+let mfd:any = new Date("2022-02-22 20:10");
+
+- All date and time methods are same as in JavaScript.
+
+getHours()                    setHours()...
+getMinutes()
+getSeconds()
+getMilliSeconds()
+getDate()
+getDay()
+getMonth()
+getFullYear()
+
+                             Regular Expression Type
+                            ------------------------------------
+- "any"
+
+let regExp:any = /\+91[0-9]{10}/;
+
+- It is verified by using "match()"
+- All string functions are same as in JavaScript
+
+
+TypeScript Operators Same as JavaScript
+ 1. Arithematic
+ 2. Comparision
+ 3. Logical
+ 4. Assignment
+ 5. Bitwise
+ 6. Special
+
+TypeScript Statements same as JavaScript
+1. Selection        : if, else, switch, case, default
+2. Looping        : for, while, do while
+3. Iteration        : for..in, for..of
+4. Jump            : break, return, continue
+5. Exception    : try, catch, throw, finally
+
+
+TypeScript Function are similar to JavaScript with few changes
+- Function is configured with type
+- Function parameters also use type.
+
+Syntax:
+function Add(a:number,b:number):number {
+    return a + b;
+}
+function Print():void {
+    console.log("Addition=" + Add(10,20));
+}
+
+FAQ: Can we define a function that can return various types?
+Ans: Yes
+
+function Add(a:number|string):number|string {
+    if((typeof a)=="number") {
+        return 0;
+    } else {
+        return "";
+    }
+}
+
+- TypeScript function can have optional parameters.
+
+Ex:
+function ProductDetails(id:number, name?:string) {
+    if(name==undefined) {
+        console.log("Id=" + id);
+    } else {
+        console.log(`Id=${id}\nName=${name}`);
+    }
+}
+
+ProductDetails(10, "Mobile");
+
+Note: A required parameter can't follow optional parameter.
+        All optional parameters must be last params.
+
+Syntax:
+ProductDetails(id:number, name?:string, price:number)     // invalid
+ProductDetails(id:number, price:number, name?:string)  // valid
+
+- All JavaScript function basics are same in typescript
+    function closure
+    function promise
+    rest params
+    anonymous function
+    arrow function
+
+
+Summary:
+1. Variables
+2. Data Types
+3. Operators
+4. Statements
+5. Functions
+
+                                 TypeScript OOP
+                                 ----------------------
+1. Contracts
+- Contract defines rules for designing any component in OOP.
+- Contract are designed by using "inerface".
+
+Syntax:
+    interface Name
+    {
+     // rules
+    }
+
+- Contract can't define values.
+- Contract can contain only structure.
+
+interface ProductContract
+{
+    Name:string;
+    Price:number;
+    Stock:boolean;
+    Qty:number;
+}
+
+let product:ProductContract = {
+    Name: "Samsung TV",
+    Price: 5000.43,
+    Stock: true,
+    Qty: 2,
+}
+
+- You can define rules for properties and methods.
+
+Ex:
+interface ProductContract
+{
+    Name:string;
+    Price:number;
+    Stock:boolean;
+    Qty:number;
+    Total():number;
+    Print():void;
+}
+
+let product:ProductContract = {
+    Name: "Samsung TV",
+    Price: 5000.43,
+    Stock: true,
+    Qty: 2,
+    Total: function(){
+        return this.Qty * this.Price;
+    },
+    Print:function(){
+       
+    }
+}
+
+- A contract can contain optional rules.
+- Optional rules are defined to configure Goal of module.
+- "null reference" character "?" is used for optional members.
+
+interface ProductContract
+{
+    Name:string;
+    Price:number;
+    Stock:boolean;
+    Qty:number;
+    Total():number;
+    Print?():void;
+    Category?:string;
+}
+
+let product:ProductContract = {
+    Name: "Samsung TV",
+    Price: 5000.43,
+    Stock: true,
+    Qty: 2,
+    Total: function(){
+        return this.Qty * this.Price;
+    },
+    Print:function(){
+
+    },
+    Category: "Electronics"
+}
+
+
+- You can configure readonly rules.
+
+Ex:
+interface ProductContract
+{
+    readonly Name:string;
+    Price:number;
+    Stock:boolean;
+    Qty:number;
+    Total():number;
+    Print?():void;
+    Category?:string;
+}
+
+let product:ProductContract = {
+    Name: "Samsung TV",
+    Price: 50000.43,
+    Stock: true,
+    Qty: 2,
+    Total: function(){
+        return this.Qty * this.Price;
+    },
+    Print:function(){
+
+    },
+    Category: "Electronics"
+}
+product.Name = "Samsung LED Curved TV";        // invalid
+product.Price = 46000.55;
+July16:
+TypeScript OOP
+- Contracts
+    * Interface
+    * Rules for Properties and Methods
+    * Optional Rules
+    * ReadOnly Rules
+    * Extending Contracts
+
+                        Extending Contracts
+
+- You can extend existing contract by adding new rules.
+
+syntax:
+    interface  Version1
+    {
+        //rules
+    }
+    interface Version2 extends Version1
+    {
+    }
+
+- It supports
+    a) Single Inheritance
+    b) Multi Level
+    c) Multiple
+   
+
+FAQ: Why we need to extend existing contract? Why we can't make change in existing contract?
+Ans:  Backward Compatibility
+
+
+Ex:
+interface HdfcBank_Version1
+{
+    Personal:string;
+    NRI:string;
+}
+interface HdfcBank_Version2 extends HdfcBank_Version1
+{
+    Loans:string;
+}
+let BankApp_Legacy:HdfcBank_Version1 = {
+    Personal: "Personal Banking",
+    NRI : "NIR Banking"
+}
+let BankApp_Modern:HdfcBank_Version2 = {
+    Personal: "Personal Banking",
+    NRI : "NIR Banking",
+    Loans: "Car, Bike, Home Loans"
+}
+
+
+Ex: Multiple
+
+interface HdfcBank_Version1
+{
+    Personal:string;
+    NRI:string;
+}
+interface HdfcBank_Version2 extends HdfcBank_Version1
+{
+    Loans:string;
+}
+interface BankApp extends HdfcBank_Version1, HdfcBank_Version2
+{
+  BankName:string;
+}
+let BankApp_Legacy:HdfcBank_Version1 = {
+    Personal: "Personal Banking",
+    NRI : "NIR Banking"
+}
+let BankApp_Modern:BankApp = {
+    Personal: "Personal Banking",
+    NRI : "NIR Banking",
+    Loans: "Car, Bike, Home Loans",
+    BankName: "HDFC"
+}
+
+Ex:
+1. index.ts
+
+interface HdfcBank_Version1
+{
+    Personal:string;
+    NRI:string;
+}
+interface HdfcBank_Version2 extends HdfcBank_Version1
+{
+    Loans:string;
+}
+
+let BankApp_Legacy:HdfcBank_Version1 = {
+    Personal: "Personal Banking",
+    NRI : "NIR Banking"
+}
+let BankApp_Modern:HdfcBank_Version2 = {
+    Personal: "Personal Banking",
+    NRI : "NIR Banking",
+    Loans: "Car, Bike, Home Loans",
+}
+
+2. Compile
+    > tsc index.ts
+
+3. Index.html
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index</title>
+        <script src="../src/index.js"></script>
+        <script>
+            function GetFeatures(){
+                var version = document.querySelector("select").value;
+                switch(version){
+                    case "ver1":
+                    document.querySelector("p").innerHTML = `
+                      ${BankApp_Legacy.Personal} <br>
+                      ${BankApp_Legacy.NRI}
+                    `
+                    break;
+                    case "ver2":
+                    document.querySelector("p").innerHTML = `
+                      ${BankApp_Modern.Personal} <br>
+                      ${BankApp_Modern.NRI}  <br>
+                      ${BankApp_Modern.Loans}
+                    `
+                    break;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Select Bank App Version:
+        <select>
+            <option value="ver1">Version-1</option>
+            <option value="ver2">Version-2</option>
+        </select>
+        <button onclick="GetFeatures()">Install</button>
+        <p></p>
+    </body>
+</html>
+
+                             TypeScript Class
+- Class is a program template.
+- Class members
+        a) Property
+        b) Method
+        c) Accessor
+        d) Constructor
+
+FAQ: Can we defined a variable in class?
+Ans: No.
+
+- TypeScript class can configure static and non static members.
+
+
+Static
+- It refers to continous memory
+- Static members are defined by using "static" keyword.
+- They are accessed with in class or outside class by using class name.
+- Uses more memory.
+
+Non-Static
+- It refers to discreet memory
+- It is disconnected in access
+- Memory is newly allocated for every object.
+- They are accessed within class by using "this" and outside class by using instance of class.
+
+Ex:
+class Demo
+{
+    static s = 0;
+    n = 0;
+    constructor(){
+        Demo.s = Demo.s + 1;
+        this.n = this.n + 1;
+    }
+    Print(){
+        console.log(`s=${Demo.s} n=${this.n}`);
+    }
+}
+let obj1 = new Demo();
+obj1.Print();
+let obj2 = new Demo();
+obj2.Print();
+let obj3 = new Demo();
+obj3.Print();
+
+
+Access Modifiers
+- public            
+        It is accessible within the class.
+        It is accessible outside the class from any location and any
+        object.
+- private
+        It is accessible only within the class.
+- protected
+        It is accessible within the class.
+        It is accessible outside class only in derived class and only by using derived class object.
+
+Inheritance
+- Single
+- Multi Level
+
+FAQ: Why multiple inheritance is not supported for class?
+Ans: Constructor Deadlock
+ 
+July20:
+Generics
+- Generics allow to configure "Type Safe" component.
+- Type Safe component allows to handle any type before the value is known.
+- Once the data type of value is known then it can make it strongly typed.
+- TypeScript allows Generic
+        a) Class
+        b) Property
+        c) Method
+
+Ex:
+interface IOracle
+{
+    UserName:string;
+    Password:string;
+    Database:string;
+}
+interface IMySql
+{
+    host:string;
+    user:string;
+    password:string;
+    database:string;
+}
+interface IMongoDb
+{
+    url:string;
+}
+class Database<T>
+{
+    public ConnectionString:T|null = null;
+    public Connect(){
+        for(var property in this.ConnectionString) {
+            console.log(`${property} : ${this.ConnectionString[property]}`);
+        }
+    }
+}
+console.log(`---------Connecting with Oracle---------------`);
+let oracle = new Database<IOracle>();
+oracle.ConnectionString = {
+    UserName: "scott",
+    Password: "tiger",
+    Database: "empdb"
+}
+oracle.Connect();
+console.log(`--------Connecting with MySql-------------`);
+let mysql = new Database<IMySql>();
+mysql.ConnectionString = {
+    host: "localhost",
+    user: "root",
+    password: "1234",
+    database:"studb"
+}
+mysql.Connect();
+console.log(`--------Connecting with MongoDB-----------`);
+let mongo = new Database<IMongoDb>();
+mongo.ConnectionString= {
+    url: "mongodb://127.0.0.1:27017"
+}
+mongo.Connect();
+
+Ex:
+interface IProduct {
+    Name:string;
+    Price:number;
+    Stock:boolean;
+}
+interface IEmployee {
+    FirstName:string;
+    LastName:string;
+    Designation:string;
+}
+
+class Service
+{
+    public GetData<T>(data:T){
+        console.log(data);
+    }
+}
+let tv = new Service();
+tv.GetData<IProduct>({Name:"TV", Price:35000, Stock:true});
+tv.GetData<IProduct[]>([{Name:"Mobile", Price:42000, Stock:true}])
+
+Note: Generic types can't handle operations directly. You have to use
+         functions.
+
+function Sum(a:any,b:any) {
+    return a + b;
+}
+class Demo
+{
+    public Add<T>(a:T, b:T):T {
+        return Sum(a,b);
+    }
+}
+let obj = new Demo();
+obj.Add<number>(10,20);
+obj.Add<string>("A", "B");
+
+                               Enum [Enumeration]
+- It is collections of constants.
+- TypeScript enums can have
+    a) Numeric
+    b) String
+    c) Assorted [Number, String, Expression]
+- All enum declarations require initialization.
+- If you are configuring enum with number type then they have auto initialization of value.
+- Initial value starts with "0".
+- The other values are initialized based on previous value.
+
+
+Ex:
+enum Weekdays
+{
+    Sunday,
+    Monday,
+    Tue,
+    Wed,
+    Thu,
+    Fri,
+    Sat
+}
+enum Months {
+    Jan,
+    Feb,
+    Mar,
+    Apr,
+    May,
+    June,
+    July,
+    Aug
+}
+let now:any = new Date();
+console.log(`
+  Month : ${Months[now.getMonth()]} \n
+  Weekday: ${Weekdays[now.getDay()]} \n
+`)
+
+- Enum must have a initializer if its string type.
+- If previous value is a string then you have to initialize value.
+- You can configure enum with expression, but enum will allow only expression that returns string or number.
+- Boolean types are not allowed in enum.
+
+const enum Values
+{
+   a = 10,
+   b = 20,
+   c = a + b
+}
+console.log(`Addition=${Values.c}`);
+
+- You can configure enum as "const" if it is defined with expressions.
+
+   
+                                 Modules
+ 
+
+July21:
+Modules
+- A module is a set of variables, classess, functions, contracts, enums etc.
+- Module system allows to build a library for application.
+- JavaScript based technologies uses various module systems
+        a) CommonJS
+        b) RequireJS
+        c) UMD (Universal Module Distribution)
+        d) AMD (Asyn Module Distribution)
+- TypeScript by default uses "CommonJS"
+- Module System enables reusability and separation of components.
+- Every TypeScript file is considered as a module.
+
+                            demo.ts
+        //module - demo
+        var x;
+         function f1() { }
+        interface name { }
+        enum name { }
+         class name { }
+
+- Every member configured in module is accessible only within the module scope.
+- If you want any member accessible outside module scope then mark it as "export".
+
+        export function f1() { }
+        export interface name { }
+        export class name { }
+
+- Every module can have one default member
+
+        export default function f1(){ }
+       
+- You can import module members using "import"
+       
+        import  { non-default } from 'moduleName';
+        import  defaultMember  from 'moduleName';
+        import  defaultMember, { non-default, ... } from 'moduleName';
+
+
+                                Namespace
+- Every namespace is a collection of sub-namespace and members like contracts, templates, functions, components, variables etc.
+
+Syntax:
+    export namespace  Project
+    {
+     export namespace Contracts
+      {
+         export interface ProductContract  {
+
+         }
+      }
+     }
+
+    /// <reference path="../contracts/productcontract.ts" />
+
+        Project.Contracts.ProductContract;
+
+
+
+                  Create a React App with TypeScript
+                  -------------------------------------------------
+>npx  create-react-app  appname  --template  typescript
+
+Note: ".ts" is to configure your contracts, templates and library.
+        ".tsx" is to configure your react components with markup.
+
+Ex:
+ProductContract.ts
+
+export interface ProductContract
+{
+    Name:string;
+    Price:number;
+    Stock?:boolean;
+}
+
+ProductComponent.tsx
+
+import { useEffect, useState } from "react"
+import { ProductContract } from "../contracts/ProductContract"
+export function ProductComponent(){
+    const [product, setProduct] = useState<ProductContract>();
+   
+    useEffect(()=>{
+        setProduct({
+            Name: "TV",
+            Price: 45000.33,
+            Stock: true
+        })
+    },[])
+    return(
+       <div>
+          <dl>
+            <dt>Name</dt>
+            <dd>{product?.Name}</dd>
+            <dt>Price</dt>
+            <dd>{product?.Price}</dd>
+            <dt>Stock</dt>
+            <dd>{(product?.Stock)?"Available":"Out of Stock"}</dd>
+          </dl>
+       </div>
+    )
+}
+
+July25:
+- Create React App with TypeScript
+- Various 3rd Party Tools in React
+        a) Axios                : For API
+        b) Formik            : Forms
+        c) Yup                : Form Validations
+        d) React.Cookie    : Cookies
+        e) jQuery                : jQuery Ajax
+        f) Bootstrap            : Components
+- Material UI [Telerik]
+- Redux
+- React Native, [Ionic]
+- Testing
+- Deployment [Cloud - GitHub Pages, Firebase, AWS, Azure]
+
+
+                                 Material UI
+- It a component library for react.
+- It is built for react and hance it is native for react.
+- It provides predefined components like
+        button,
+        accordion
+        sliders
+        dialogs
+        grids etc..
+- React 17 > versions are using "emotion" styling engine for MUI.
+
+Setup Material UI for React Project:
+-------------------------------------------------
+- Install following tools in your project
+
+>npm install @mui/material
+>npm install @emotion/react
+>npm install @emotion/styled
+
+Browser Engine
+    DOM
+Styling Engine
+    CSSOM
+                            (or)
+>npm install @mui/material @emotion/react @emotion/styled --save
+
+- React Material UI uses special fonts and icons library, you can get Google API.
+
+- Get the CDN links form official source and link to your Index.html
+
+Font Link:
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&quot;
+/>
+
+Icons link:
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons&quot;
+/>
+
+Material Icons:
+
+> npm install @mui/icons-material
+
+FAQ:What are Web-Safe Fonts?
+Ans : serif, sans-serif, monospace.
+
+                     Setup MUI Components in React App
+Step-1: Import the library for component
+
+  import { Button } from  '@mui/material/button'
+
+Step-2: Every component have a selector and properties
+
+        <Button props={ }> </Button>
+
+
+Note: To learn about any new component you have explore the API.
+
+1. Get the details about library required to import
+
+    import Button from '@mui/material/Button';
+                // or
+    import { Button } from '@mui/material';
+
+2. Get the details about component selector and properties
+
+    <Button variant="text">
+    <Button classes="MuiButton-text">
+
+
+ {
+   map(p=>
+      <Card> </Card>
+  )
+ }
+
+July26:
+FAQ: What is State Management and Why we need State Management?
+Ans:
+- Web Application uses Http(s) as Protocol.
+- Http is a state less protocol.
+- It works with the mechanism
+        "Go-Get-Forget"
+
+  Go        : Establish connection with server
+  Get        :  Get response from server, Fetch
+  Forget    : Disconnect from server
+
+- State less nature of Http protocol is good, as memory is well managed.
+- It is a draw back for application, as it can't remember information between requests.
+- Hence web application uses various state management techniques
+        a) Hidden input
+        b) Cookies
+        c) Session
+        d) Application
+        e) Local Storage
+        f) Context memory
+        g) QueryString
+
+Hidden State:
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>State</title>
+    </head>
+    <body>
+       <form>
+        <dl>
+            <input type="hidden" name="UserId" value="john_nit">
+            <dt>Name</dt>
+            <dd><input type="text" name="UserName" value="John"></dd>
+        </dl>
+        <button>Update</button>
+       </form>
+    </body>
+</html>
+
+
+Cookies:
+- A simple text file that stores client details
+    a) Inmemory
+    b) Persistent
+
+
+Session State:
+- It uses single call mechanism
+- An object is created for every client request.
+- It is destroyed when client terminates.
+- Life span of object is from client login to logout. or start and end of any transaction.
+- Default duration of session is 20min.
+
+Application State:
+- It uses single ton mechanism
+- An object is created for first request and same is used across
+  all requests.
+- It ends when application is closed.
+- It makes the data available across multiple sessions.
+
+Context Memory:
+- Context is memory allocated for component
+- It is made available for components that
+  run within the context of parent.
+
+QueryString :
+- It is used to transport data across requests
+- It appends data in URL
+
+                                    Redux
+- It is a state container for JavaScript Apps.
+- It is used in react, angular, vue, ember etc..
+- It is a centralized store for application state.
+- It allows to access and use data from any component.
+- It is application level.
+- A Predictable state container allows to manage your
+  data from application start to application end.
+- It is across all components within the scope of application.
+
+July27:
+MVC
+- Model -View - Controller
+
+Model
+- It represents the data we are working with.
+- It contains data logic.
+- It contains data validation rules
+- It contains meta data [changes and updates]
+- It is reffered as "single-source-of-truth"
+
+View
+- UI
+- It defines view and partial view
+- It trigers the actions
+
+Controller
+- It comprises actions to perform
+- It is reffered as subscriber
+- It is a reducer.
+- It handles the overall communication between model and view.
+
+
+User Clicks on "Add to Cart" => Collect the Product Details => Store in Redux Store => Assign to CartItems[] => Bind to UI
+
+
+Step-1:  Install Redux Tool Kit for your project
+
+ > npm install @reduxjs/toolkit   react-redux  --save
+
+              Install redux dev tools for your chrome browser
+
+Step-2:  Create a Redux slicer
+
+- In redux slicer is used to configure the initial state and actions.
+            cartItems:any[] = []
+            cartCount:number=0
+            addToCart:any;    
+            createSlicer
+ 
+- Add a new file into project
+
+            "CartSlicer.tsx"
+
+import { createSlice } from "@reduxjs/toolkit";
+ 
+const initialState = {
+    cartItems: [],
+    cartCount : 0
+}
+ 
+const cartSlice  = createSlice({
+    name: 'cart',
+    initialState,
+    reducers: {
+        addToCart(state:any, action){
+             state.cartItems.push(action.payload);
+             state.cartCount = state.cartItems.length;
+        }
+    }
+});
+export const { addToCart } = cartSlice.actions;
+export default cartSlice.reducer;
+
+Note: Slice comprises of
+            a) initial state
+            b) name
+            c) reducer : actions
+
+Step-3:  Configure Store
+  "store.tsx"
+
+import { configureStore } from "@reduxjs/toolkit";
+import CartSlicer from "./CartSlicer";
+ 
+export default configureStore({
+    reducer: {
+        store : CartSlicer                //initial state[cartItems, count], actions    
+    }                              
+})
+
+Note: It creates a store centralized and adds the references for
+                a) cartItems[]
+                b) carCount
+
+Step-4:  Configure UI
+
+"ProductsComponent.tsx"  [shopping cart page] with Add to cart
+
+import { addToCart } from "./CartSlicer";
+import { useDispatch } from "react-redux";
+ 
+ 
+    const dispatch = useDispatch();
+ 
+    const handleAddToCart = (product:any) => {
+        dispatch(addToCart(product));
+    }  
+
+    {
+       products.map(product=>
+                 <card>
+                    <Button onClick={()=> handleAddToCart(product)}  className="w-100" variant="contained" > <span className="bi bi-cart4"></span>  Add to Cart</Button>
+
+              </card>
+       )
+    }
+ 
+Step-5: Configure store at app level with a provider
+
+  index.tsx
+
+import { Provider } from 'react-redux';
+import store from './ishop/store';   [store.tsx]
+ 
+<React.StrictMode>
+     <Provider store={store} >
+       <IshopIndexComponent />
+     </Provider>
+</React.StrictMode>,
+
+React Native, Ionic - Mobile - PWA
+
+July28:
+Deploying and React App
+----------------------------------
+1. Bulding React App
+    - It is the process of checking syntax errors
+    - Identifying the issues in dependencies
+    - Compile successfully
+    - Create a build ready for deployment
+
+    > npm run build
+
+    - Adds a new folder into project "build"
+
+2. Deploying
+   - It is the process of making your application ready for client use.
+   - You can deploy on
+        a) Local Server
+        b) Cloud Server
+   - Local Server
+        XAMPP
+        MAMP
+        IIS
+        Apache Tomcat
+   - Cloud Server
+        firebase
+        git hub pages
+        aws
+        azure  etc..
+
+Windows IIS local server:
+----------------------------------
+[Internet Information Services Manager]
+
+1. Open IIS on your PC
+        run > inetmgr
+        search > iis
+
+2. Create a new Virtual Directory [Website]
+
+        alias:  reactshop
+        path:  build folder
+
+3. Add index.html into build
+
+ http://localhost/reactshop
+
+                                 Firebase Cloud
+
+1. Open firebase and login with your google account
+
+        https://firebase.google.com/
+
+2. Go to console and create a new  "Project"
+
+    Name                    :    reactsmartshopdemo
+    Google Analytics     : Continue
+    Account                :  Default account
+
+    Click on Create Project
+
+3. Download and Install Firebase tools on your PC
+
+     C:\> npm install -g firebase-tools
+
+
+4. Open your project in VS Code
+
+5. Open Terminal and Login into firebase
+
+        >firebase login
+
+6. Run the command
+
+        >firebase init
+
+    ? Are you ready to proceed? Yes
+    ? Which Firebase features do you want to set up for this directory?
+        [hosting]
+
+        Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Ac
+tion deploys
+
+                [space bar to select]
+
+    > Use an existing project
+
+     ? Select a default Firebase project for this directory: reactsmartshopdemo    
+
+    ? What do you want to use as your public directory? build
+
+    Configure as a single-page app (rewrite all urls to /index.html)? Y
+ 
+    Set up automatic builds and deploys with GitHub? N
+    Overwrite Index.html ? N
+
+7. Deploy
+
+        > firebase deploy
+
+    https://reactsmartshopdemo.web.app
+
+
+
+                                Design PWA
+
+- Progressive Web Application
+- App like experience in browser
+- Frameworks
+        a) Apache Cordova
+        b) Ionic
+        c) Native Script
+        d) React Native  etc..
+July29:
+React Native
+- It is a cross platform library for building mobile native applications.
+- PWA Progressive Web Application
+- Unified experience across devices [Unified UX]
+- Android , iOS, window native apps.
+- It provides native components, which can run on any device.
+
+React Native UI        Android        iOS                    Web
+<View>                <ViewGroup>    <UIView>            <div>
+<Text>                <TextView>        <UITextView>        <p>
+<Image>                <ImageView>    <UIImageView>    <img>
+<ScrollView>                                                    <div> scrollable
+<TextInput>                                                        <input type="text">
+<StyleSheet>            
+<Switch>
+<FlatList>
+<SectionList>
+<Alert>
+<Modal>
+<StatusBar>
+
+- React Native Application is controlled by using
+        "Expo-CLI"
+     [Command Line Tool]
+
+C:\> npm install -g expo-cli
+
+- Create a new React Native App
+
+ D:\> expo init  app-name
+
+- Choose "TypeScript Tabs" template
+
+
+Ionic Framework
+
+> npm install -g @ionic/cli
+
+> npm install -g native-run  cordova-res
+
+- Creating App
+
+D:\>  ionic  start  appname   tabs  --type=react  --capacitor
+
+In Project
+> npm install @ionic/pwa-elements
+
+Run project
+> ionic serve
+
+                                      What are the changes in 18+
+                                     WebPack
+
+July30:
+1. Create a folder
+
+2. Run init
+    > npm init -y
+
+3. Create public / index.html
+
+4. Install Webpack
+
+    >npm install webpack webpack-cli --save-dev
+
+5. Add a new file
+
+// webpack.config.js
+
+const path = require("path");
+
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "build"),
+  },
+};
+
+
+6. Add in package.json
+
+"scripts": {
+
+    "build": "webpack"
+  },
+
+
+7. Install HTML webpack plug-in
+
+ npm install html-webpack-plugin --save-dev
+
+
+8. Make changes in Webpack.config
+
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "public", "index.html"),
+    }),
+  ],
+
+
+
+// Final Code
+
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "build"),
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "public", "index.html"),
+    }),
+  ],
+};
+
+8. Add web pack dev server
+
+> npm install --save-dev webpack-dev-server
+
+
+9.  Modifiy Webpack.config
+
+devServer: {
+    static: {
+      directory: path.join(__dirname, "build"),
+    },
+    port: 3000,
+  }
+
+
+10. Package.json Scripts
+
+"scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
+  }
+
+>npm run start
+
+11.  Install Babel
+
+> npm i @babel/core @babel/preset-env babel-loader --save-dev
+
+
+12. Modify Web.config
+
+
+module: {
+    // exclude node_modules
+    rules: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
+    ],
+  },
+  // pass all js files through Babel
+  resolve: {
+    extensions: ["*", ".js"],
+  }
+
+13. Add file
+
+// .babelrc
+
+{
+  "presets": [
+    "@babel/preset-env"
+  ]
+}
+
+
+14. Add React
+
+>npm i react react-dom --save
+>npm i @babel/preset-react --save-dev
+
+
+15. Babel Config
+
+{
+    "presets": [
+      "@babel/preset-env",
+      ["@babel/preset-react", {
+      "runtime": "automatic"
+    }]
+    ]
+}
+
+16. Add rules webpack.config
+
+rules : [
+  test: /\.(js|jsx)$/,         // <-- added `|jsx` here
+  ]
+
+extensions: ["*", ".js", ".jsx"],
+
+17.  Create Component
+        hello.js
+        const Hello = () => <h1>Hello from React!</h1>;
+
+         export default Hello;
+
+
+18. Index.js
+
+import React from "react";
+import { createRoot } from "react-dom/client";
+import Hello from "./Hello";
+
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<Hello />);
+
+
+19. Index.html
+<body>
+    <div id="root"></div>
+</body>
+ 
+
+ 
+ 
+
+
